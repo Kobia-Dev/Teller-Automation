@@ -1,0 +1,13 @@
+
+.details{
+    width:80%;
+    letter-spacing:3em;
+}
+
+.details-container {
+    display: flex horizontally;
+    justify-content: space-evenly;
+  }
+
+  
+
