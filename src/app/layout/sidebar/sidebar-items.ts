@@ -13,6 +13,19 @@ export const ROUTES: RouteInfo[] = [
     role: ["ADMIN"],
     submenu: [],
   },
+  {
+    path: "reports/mpesa-reports",
+    title: "Reports",
+    moduleName: "reports",
+    iconType: "feather",
+    icon: "credit-card",
+    class: "",
+    groupTitle: false,
+    badge: "",
+    badgeClass: "",
+    role: ["ADMIN"],
+    submenu: [],
+  },
 
   
 ]
