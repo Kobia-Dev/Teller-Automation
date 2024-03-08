@@ -8,11 +8,8 @@ import { ForexComponent } from './forex/forex.component';
 const routes: Routes = [
   {path: '', component: MpesaReportsComponent},
   {path: 'mpesa-reports', component: MpesaReportsComponent},
-  {path: '', component: FundsTransferReportComponent},
   {path: 'funds-transfer-report', component: FundsTransferReportComponent},
-  {path: '', component: InternationalMoneyTransferComponent},
   {path: 'international-money-transfer', component: InternationalMoneyTransferComponent},
-  {path: '', component: ForexComponent},
   {path: 'forex', component: ForexComponent}
 ];
 

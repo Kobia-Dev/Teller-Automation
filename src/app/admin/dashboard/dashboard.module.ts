@@ -10,11 +10,14 @@ import { MatInputModule } from '@angular/material/input';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 
 @NgModule({
   declarations: [   
       
     
+  
+    DashboardViewComponent
   ],
   imports: [
     CommonModule,

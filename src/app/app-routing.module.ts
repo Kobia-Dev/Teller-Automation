@@ -31,7 +31,16 @@ const routes: Routes = [
         loadChildren: () =>
           import("./tellers/tellers.module").then((m) => m.TellersModule),
       },
-
+      {
+        path: "transactions",
+        loadChildren: () =>
+          import("./transactions/transactions.module").then((m) => m.TransactionsModule),
+      },
+      {
+        path: "back-office",
+        loadChildren: () =>
+          import("./back-office/back-office.module").then((m) => m.BackOfficeModule),
+      },
       
       
       
