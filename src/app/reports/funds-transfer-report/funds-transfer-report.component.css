@@ -1,31 +1,27 @@
-body {
-    font-family: Arial; /* Set the font family for the entire document to Arial */
-  }
-  
-  .tab {
-    overflow: auto; /* Enable scrolling if necessary */
-  }
-  
-  .tab button {
-    background-color: #b1a7a7;
-    border-radius: 10px; 
-    outline-width: 10px; 
-    cursor: pointer; 
-    padding: 10px 15px;
-    margin: 1%; 
-    float: left;
-    display: flex;
-    height: 100px;
-    width: 100px; 
-    white-space: wrap; 
-    transition: background-color 0.3s; 
-  }
-  
-  .tab button:hover {
-    background-color: #ad4a4a; /* Change background color on hover */
-  }
-  
-  .tab button.active {
-    background-color: #ccc; /* Set background color for active tab */
-  }
-  
+body {font-family: Arial;}
+
+.tab {
+  overflow: auto; 
+}
+
+.tab button {
+  background-color: #b1a7a7;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin: 0%; 
+  float: left;
+  width: 100%;
+  height: 30px;
+  white-space: nowrap; 
+  transition: background-color 0.3s; 
+}
+
+.tab button:hover {
+  background-color: #ad4a4a; 
+}
+
+.tab button.active {
+  background-color: #ccc; 
+}
