@@ -21,8 +21,29 @@ import { BaseComponent } from "src/app/shared/components/base/base.component";
   styleUrls: ["./sidebar.component.sass"],
 })
 
-export class SidebarComponent extends BaseComponent implements OnInit, OnDestroy {
+export class SidebarComponent extends BaseComponent implements OnInit, OnDestroy {z
   public sidebarItems: any[];
+
+  isHidden1=true
+  closeNav1(){
+    this.isHidden1=!this.isHidden1
+  }
+
+  isHidden2: boolean = true;
+  closeNav2() {
+    this.isHidden2 = !this.isHidden2;
+  }
+
+  isHidden3: boolean = true;
+
+  closeNav3() {
+    this.isHidden3 = !this.isHidden3;
+  }
+
+  
+
+
+
   level1Menu = "";
   level2Menu = "";
   level3Menu = "";
@@ -36,6 +57,8 @@ export class SidebarComponent extends BaseComponent implements OnInit, OnDestroy
   headerHeight = 60;
   currentRoute: string;
   routerObj = null;
+
+  isMenuOpen: boolean = false;
 
   currentUser: any;
 

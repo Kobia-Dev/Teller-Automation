@@ -16,11 +16,11 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   public login(user: any): Observable<Auth>{
-    return this.http.post<Auth>(`${environment.baseUrl}/api/v1/auth/authenticate`, user, httpOptions);
+    return this.http.post<Auth>(`${environment.baseUrl}/api/v1/auth/admin/signin`, user, httpOptions);
   }
 
   public register(user: any): Observable<{ message: string }> {
-    const registerUrl = `${environment.baseUrl}/p2p/auth/signup`;
+    const registerUrl = `${environment.baseUrl}/api/v1/auth/signup`;
 
     return this.http.post<{ message: string }>(registerUrl, user)
   }
