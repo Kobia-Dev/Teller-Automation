@@ -9,6 +9,7 @@ import { DirectionService } from "src/app/core/service/direction.service";
 export class MainLayoutComponent implements OnInit {
   direction: string;
   public config: any = {};
+  
   constructor(private directoryService: DirectionService) {
     this.directoryService.currentData.subscribe((currentData) => {
       if (currentData) {
@@ -21,7 +22,7 @@ export class MainLayoutComponent implements OnInit {
             this.direction = "ltr";
           }
         } else {
-          if (this.config.layout.rtl == true) {
+          if (this.config && this.config.layout && this.config.layout.rtl === true) {
             this.direction = "rtl";
           } else {
             this.direction = "ltr";
@@ -30,5 +31,6 @@ export class MainLayoutComponent implements OnInit {
       }
     });
   }
+  
   ngOnInit(): void {}
 }
