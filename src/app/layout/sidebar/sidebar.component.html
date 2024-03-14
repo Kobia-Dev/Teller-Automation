@@ -51,9 +51,6 @@
           </a >         
         </li> 
 
-
-
-
         <li  class="list_button">
           <div>
             <div (click)='closeNav1()' class="menu-top">
@@ -96,7 +93,7 @@
                  <li><a [routerLink]="['/transactions/mpesa-transactions']"  class='menu-top ' > Mpesa Transactions</a></li>
                  <li><a [routerLink]="['/transactions/funds-transactions']"  class='menu-top' > Funds Transfers</a></li>
                  <li><a [routerLink]="['/transactions/back-office-transactions']"  class='menu-top' > Back office Transactions</a></li>
-                 <li><a [routerLink]="['/transactions/end-of-day-transactions']"  class='menu-top' > End Day Transactions</a></li>
+                 <li><a [routerLink]="['/transactions/end-of-day-transactions']"  class='menu-top' > EOD Transactions</a></li>
               </ul>    
             </div>         
           </div>         
@@ -112,6 +109,7 @@
           </div>
             <div [hidden]="isHidden3">
               <ul  class='p-2 flex flex-col gap-1 ' >
+                <li><a [routerLink]="['/back-office/referrals']"  class='menu-top ' > Referrals</a></li>
                 <li><a [routerLink]="['/back-office/modify-teller']"  class='menu-top ' > Modify Teller</a></li>
                  <li><a [routerLink]="['/back-office/add-teller']"  class='menu-top ' > Add Teller</a></li>
                  

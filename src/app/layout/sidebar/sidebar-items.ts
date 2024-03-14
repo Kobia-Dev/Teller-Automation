@@ -147,7 +147,7 @@ export const ROUTES: RouteInfo[] = [
       },
       {
         path: "./transactions/funds-transactions",
-        title: "Funds Transactions",
+        title: "Funds Transfers",
         moduleName: "transactions",
         iconType: "feather",
         icon: "activity",
@@ -241,3 +241,4 @@ export const ROUTES: RouteInfo[] = [
   },
   
 ]
+ 

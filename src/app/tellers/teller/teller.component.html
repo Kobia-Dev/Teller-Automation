@@ -1,6 +1,13 @@
 <section class="content">
   <div class="content-block">
       <div class="block-header">
+        <div class="row col-sm-12 mt-3">
+          <div class="col-sm-9 h5">Teller Information</div>
+          <div class="col-sm-3 d-flex justify-content-end">  
+            <button routerLink="/add-teller/back-office" class="btn btn-primary text-end">Add Teller</button>
+          </div>
+        </div>
+        
           <div class="card-body table-responsive">
               <table class="table table-hover">
                 <thead>
@@ -18,9 +25,16 @@
                     <td>corporate Teller</td>
                     <td>DK41621</td>
                     <td>48621</td>
-                    <td>
+                    <td class="d-flex" style="margin-left: 30%;">
                       <!-- Button trigger modal -->
-                      <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">View</a>
+                      <a routerLink="'/modify'" class="btn btn-primary mx-1">
+                        <i class="fa fa-edit"></i>
+                        Edit
+                      </a>
+                      <a routerLink="#" class="btn btn-danger mx-1">
+                        <i class="fa fa-trash"></i>
+                        Delete
+                      </a>
                     </td>
                   </tr>
                   <tr>
@@ -28,9 +42,16 @@
                     <td>teller</td>
                     <td>TM42621</td>
                     <td>48622</td>
-                    <td>
+                    <td class="d-flex" style="margin-left: 30%;">
                       <!-- Button trigger modal -->
-                      <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">View</a>
+                      <a routerLink="/modify" class="btn btn-primary mx-1">
+                        <i class="fa fa-edit"></i>
+                        Edit
+                      </a>
+                      <a routerLink="#" class="btn btn-danger mx-1">
+                        <i class="fa fa-trash"></i>
+                        Delete
+                      </a>
                     </td>
                   </tr>
                   <tr>
@@ -38,9 +59,16 @@
                     <td>teller</td>
                     <td>DK43621</td>
                     <td>48623</td>
-                    <td>
+                    <td class="d-flex" style="margin-left: 30%;">
                       <!-- Button trigger modal -->
-                      <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">View</a>
+                      <a routerLink="" class="btn btn-primary mx-1">
+                        <i class="fa fa-edit"></i>
+                        Edit
+                      </a>
+                      <a routerLink="#" class="btn btn-danger mx-1">
+                        <i class="fa fa-trash"></i>
+                        Delete
+                      </a>
                     </td>
                   </tr>
                 </tbody>
@@ -49,24 +77,3 @@
       </div>
   </div>
 </section>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      Modal body content goes here.
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
-    </div>
-  </div>
-</div>
-</div>
