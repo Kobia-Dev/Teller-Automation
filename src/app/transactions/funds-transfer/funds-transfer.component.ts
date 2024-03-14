@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-funds-transfer',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FundsTransferComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+    // Constructor logic (if needed)
+  }
 
   ngOnInit(): void {
+    // Additional initialization logic (if needed)
+  }
+
+  setTab(tabname: string) {
+    this.router.navigate([`/${tabname}`]);
   }
 
 }
