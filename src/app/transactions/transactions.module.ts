@@ -8,6 +8,7 @@ import { MpesaTransactionsComponent } from './mpesa-transactions/mpesa-transacti
 import { FundsTransferComponent } from './funds-transfer/funds-transfer.component';
 import { BackOfficeTransactionsComponent } from './back-office-transactions/back-office-transactions.component';
 import { EndOfDayTransactionsComponent } from './end-of-day-transactions/end-of-day-transactions.component';
+import { RtgsComponent } from '../tabs/rtgs/rtgs.component';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { EndOfDayTransactionsComponent } from './end-of-day-transactions/end-of-
     MpesaTransactionsComponent,
     FundsTransferComponent,
     BackOfficeTransactionsComponent,
-    EndOfDayTransactionsComponent
+    EndOfDayTransactionsComponent,
+    RtgsComponent
+    
   ],
   imports: [
     CommonModule,
