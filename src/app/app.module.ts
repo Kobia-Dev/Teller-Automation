@@ -32,6 +32,12 @@ import {
 
 import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 import { MatDialogModule } from '@angular/material/dialog';
+import { RtgsComponent } from './tabs/rtgs/rtgs.component';
+import { SwiftComponent } from './tabs/swift/swift.component';
+import { EftComponent } from './tabs/eft/eft.component';
+import { WesternUnionComponent } from './tabs/western-union/western-union.component';
+import { MoneyGramComponent } from './tabs/money-gram/money-gram.component';
+import { InternalTransferComponent } from './tabs/internal-transfer/internal-transfer.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -51,6 +57,11 @@ export function createTranslateLoader(http: HttpClient): any {
     RightSidebarComponent,
     AuthLayoutComponent,
     MainLayoutComponent,
+    // SwiftComponent,
+    // EftComponent,
+    // WesternUnionComponent,
+    // MoneyGramComponent,
+    // InternalTransferComponent,
   ],
   imports: [
     NgApexchartsModule,

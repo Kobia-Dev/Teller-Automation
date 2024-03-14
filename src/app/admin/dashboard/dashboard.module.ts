@@ -11,13 +11,11 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
+import { RtgsComponent } from 'src/app/tabs/rtgs/rtgs.component';
 
 @NgModule({
-  declarations: [   
-      
-    
-  
-    DashboardViewComponent
+  declarations: [ 
+   DashboardViewComponent,
   ],
   imports: [
     CommonModule,
