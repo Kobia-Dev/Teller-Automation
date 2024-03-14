@@ -51,9 +51,6 @@
           </a >         
         </li> 
 
-
-
-
         <li  class="list_button">
           <div>
             <div (click)='closeNav1()' class="menu-top">
@@ -112,6 +109,7 @@
           </div>
             <div [hidden]="isHidden3">
               <ul  class='p-2 flex flex-col gap-1 ' >
+                <li><a [routerLink]="['/back-office/referrals']"  class='menu-top ' > Referrals</a></li>
                 <li><a [routerLink]="['/back-office/modify-teller']"  class='menu-top ' > Modify Teller</a></li>
                  <li><a [routerLink]="['/back-office/add-teller']"  class='menu-top ' > Add Teller</a></li>
                  
