@@ -2,33 +2,27 @@
 <section class="content">
     <div class="content-block">
       <div class="row text-start h4 mt-3">
-        Admin add Teller
+        Admin add/create Teller
       </div>
       <form class="row g-3">
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Firstname</label>
-          <input type="text" class="form-control" id="inputEmail4" required formControlName="firstname">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" required formControlName="email">
         </div>
         <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Lastname</label>
-          <input type="text" class="form-control" id="inputPassword4" required formControlName="lastname">
+          <label for="inputName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="inputName" required formControlName="name">
         </div>
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Username</label>
-          <input type="text" class="form-control" id="inputEmail4" required formControlName="username">
+          <label for="inputNationalId" class="form-label">National Id</label>
+          <input type="number" class="form-control" id="inputNationalId" required formControlName="NationalId">
         </div>
+       
         <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputPassword4" required formControlName="email">
+          <label for="inputPfNo" class="form-label">Pf Number</label>
+          <input type="text" class="form-control" id="inputPfNo" required formControlName="pfNumber">
         </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Pf Number</label>
-          <input type="text" class="form-control" id="inputEmail4" required formControlName="pfnumber">
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Role</label>
-          <input type="text" class="form-control" id="inputPassword4" required formControlName="role">
-        </div>
+       
         <div class="col-12">
           <button type="submit" class="btn btn-primary" style="margin-left: 45%;">Submit</button>
         </div>
