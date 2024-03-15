@@ -10,56 +10,22 @@
                     <thead>
                         <tr>
                             <th>Teller</th>
-                            <th>Role</th>
-                            <th>username</th>
-                            <th>PF</th>
+                            <th>Email</th>
+                            <th>Id Number</th>
+                            <th>PF Number</th>
                             <th rowspan="2" class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> 1</td>
-                            <td>corporate Teller</td>
-                            <td>DK41621</td>
-                            <td>48621</td>
-                            <td class="d-flex" style="margin-left: 30%;">
-                                <!-- Button trigger modal -->
-                                <a routerLink="'/modify'" class="btn btn-primary mx-1">
-                                    <i class="fa fa-edit"></i> Edit
-                                </a>
-                                <a routerLink="#" class="btn btn-danger mx-1">
-                                    <i class="fa fa-trash"></i> Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>teller</td>
-                            <td>TM42621</td>
-                            <td>48622</td>
-                            <td class="d-flex" style="margin-left: 30%;">
-                                <!-- Button trigger modal -->
-                                <a routerLink="/modify" class="btn btn-primary mx-1">
-                                    <i class="fa fa-edit"></i> Edit
-                                </a>
-                                <a routerLink="#" class="btn btn-danger mx-1">
-                                    <i class="fa fa-trash"></i> Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>teller</td>
-                            <td>DK43621</td>
-                            <td>48623</td>
-                            <td class="d-flex" style="margin-left: 30%;">
-                                <!-- Button trigger modal -->
-                                <a routerLink="" class="btn btn-primary mx-1">
-                                    <i class="fa fa-edit"></i> Edit
-                                </a>
-                                <a routerLink="#" class="btn btn-danger mx-1">
-                                    <i class="fa fa-trash"></i> Delete
-                                </a>
+                        <tr *ngFor="let teller of tellers">
+                            <td>{{ teller.name }}</td>
+                            <td>{{ teller.email }}</td>
+                            <td>{{ teller.national_id }}</td>
+                            <td>{{ teller.pfnumber }}</td>
+                            <td class="text-center">
+                                <!-- Action buttons -->
+
+
                             </td>
                         </tr>
                     </tbody>

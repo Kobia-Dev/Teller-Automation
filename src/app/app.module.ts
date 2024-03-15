@@ -39,6 +39,7 @@ import { WesternUnionComponent } from './tabs/western-union/western-union.compon
 import { MoneyGramComponent } from './tabs/money-gram/money-gram.component';
 import { InternalTransferComponent } from './tabs/internal-transfer/internal-transfer.component';
 
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelPropagation: false,
