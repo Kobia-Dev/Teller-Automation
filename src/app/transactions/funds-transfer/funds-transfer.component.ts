@@ -16,6 +16,8 @@ export class FundsTransferComponent implements OnInit {
     // Additional initialization logic (if needed)
   }
 
+
+  
   setTab(tabname: string) {
     this.router.navigate([`/${tabname}`]);
   }

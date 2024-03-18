@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-rtgs',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rtgs.component.css']
 })
 export class RtgsComponent implements OnInit {
+  // router: Router = inject(Router);
 
-  constructor() { }
+  constructor(private router: Router) {
+   
+  }
 
   ngOnInit(): void {
   }
 
+  navigateToSwift(){
+this.router.navigate(['reports', 'swift']);
+  }
+  navigateToFundsTransactions(){
+    this.router.navigate(['transactions', 'funds-transactions'])
+  }
 }
