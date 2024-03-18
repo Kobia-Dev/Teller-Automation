@@ -12,7 +12,6 @@ import { SidebarComponent } from "./layout/sidebar/sidebar.component";
 import { RightSidebarComponent } from "./layout/right-sidebar/right-sidebar.component";
 import { AuthLayoutComponent } from "./layout/app-layout/auth-layout/auth-layout.component";
 import { MainLayoutComponent } from "./layout/app-layout/main-layout/main-layout.component";
-import { fakeBackendProvider } from "./core/interceptor/fake-backend";
 import { ErrorInterceptor } from "./core/interceptor/error.interceptor";
 import { JwtInterceptor } from "./core/interceptor/jwt.interceptor";
 import { LocationStrategy, HashLocationStrategy, DatePipe } from "@angular/common";
@@ -32,12 +31,7 @@ import {
 
 import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 import { MatDialogModule } from '@angular/material/dialog';
-import { RtgsComponent } from './tabs/rtgs/rtgs.component';
-import { SwiftComponent } from './tabs/swift/swift.component';
-import { EftComponent } from './tabs/eft/eft.component';
-import { WesternUnionComponent } from './tabs/western-union/western-union.component';
-import { MoneyGramComponent } from './tabs/money-gram/money-gram.component';
-import { InternalTransferComponent } from './tabs/internal-transfer/internal-transfer.component';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -57,6 +51,7 @@ export function createTranslateLoader(http: HttpClient): any {
     RightSidebarComponent,
     AuthLayoutComponent,
     MainLayoutComponent,
+   
     // SwiftComponent,
     // EftComponent,
     // WesternUnionComponent,

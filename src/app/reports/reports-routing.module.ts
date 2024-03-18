@@ -21,8 +21,8 @@ const routes: Routes = [
   {path: 'eft', component: EftComponent},
   {path: 'swift', component: SwiftComponent},
   {path: 'internal-transfer', component: InternalTransferComponent},
-  {path: 'western-union', component: WesternUnionComponent},
-  {path: 'money-gram', component: MoneyGramComponent}
+  {path: 'money-gram', component: MoneyGramComponent},
+  {path: 'western-union', component: WesternUnionComponent}
 
 ];
 

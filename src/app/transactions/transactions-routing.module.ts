@@ -7,6 +7,7 @@ import { FundsTransferComponent } from './funds-transfer/funds-transfer.componen
 import { BackOfficeTransactionsComponent } from './back-office-transactions/back-office-transactions.component';
 import { EndOfDayTransactionsComponent } from './end-of-day-transactions/end-of-day-transactions.component';
 
+
 const routes: Routes = [
   {path:'', component: AtmsTransactionsComponent},
   {path:'tellers-transactions', component: TellersTransactionsComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'funds-transactions', component: FundsTransferComponent},
   {path:'back-office-transactions', component: BackOfficeTransactionsComponent},
   {path:'end-of-day-transactions', component: EndOfDayTransactionsComponent},
+ 
 ];
 
 @NgModule({

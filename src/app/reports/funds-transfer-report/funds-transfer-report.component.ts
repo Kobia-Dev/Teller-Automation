@@ -12,7 +12,8 @@ export class FundsTransferReportComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Additional initialization logic (if needed)
+    
+    
   }
 
   setTab(tabname: string) {

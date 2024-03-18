@@ -1,7 +1,7 @@
 import { RouteInfo } from "./sidebar.metadata";
 export const ROUTES: RouteInfo[] = [
   {
-    path: "./admin/dashboard/dashboard-view",
+    path: "./admin/dashboard/actors",
     title: "Dashboard",
     moduleName: "dashboard",
     iconType: "feather",
