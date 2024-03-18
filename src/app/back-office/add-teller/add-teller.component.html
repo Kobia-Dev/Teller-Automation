@@ -1,32 +1,30 @@
-
 <section class="content">
     <div class="content-block">
-      <div class="row text-start h4 mt-3">
-        Admin add/create Teller
-      </div>
-      <form class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail4" required formControlName="email">
+        <div class="row text-start h4 mt-3">
+            Admin create Teller
         </div>
-        <div class="col-md-6">
-          <label for="inputName" class="form-label">Name</label>
-          <input type="text" class="form-control" id="inputName" required formControlName="name">
-        </div>
-        <div class="col-md-6">
-          <label for="inputNationalId" class="form-label">National Id</label>
-          <input type="number" class="form-control" id="inputNationalId" required formControlName="NationalId">
-        </div>
-       
-        <div class="col-md-6">
-          <label for="inputPfNo" class="form-label">Pf Number</label>
-          <input type="text" class="form-control" id="inputPfNo" required formControlName="pfNumber">
-        </div>
-       
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary" style="margin-left: 45%;">Submit</button>
-        </div>
-      </form>
-    </div>
-    </section>
+        <form class="row g-3" [formGroup]="addTellerForm">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Name</label>
+                <input type="text" class="form-control" id="inputEmail4" required formControlName="name">
+            </div>
+            <div class="col-md-6">
+                <label for="inputName" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputName" required formControlName="email">
+            </div>
+            <div class="col-md-6">
+                <label for="inputNationalId" class="form-label">National Id</label>
+                <input type="text" class="form-control" id="inputNationalId" required formControlName="national_id">
+            </div>
 
+            <div class="col-md-6">
+                <label for="inputPfNo" class="form-label">PF Number</label>
+                <input type="text" class="form-control" id="inputPfNo" required formControlName="pfnumber">
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary" style="margin-left: 45%;" (click)="addTeller()" [disabled]="addTellerForm.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>

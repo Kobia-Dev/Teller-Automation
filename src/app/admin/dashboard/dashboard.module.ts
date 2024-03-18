@@ -12,10 +12,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 import { RtgsComponent } from 'src/app/tabs/rtgs/rtgs.component';
+import { CustomerTransactionsComponent } from './customer-transactions/customer-transactions.component';
+import { GenWidgetsComponent } from './gen-widgets/gen-widgets.component';
+import { ActorsComponent } from './actors/actors.component';
+import { ActorPerRegionComponent } from './actor-per-region/actor-per-region.component';
+import { MixedTransactionsBarComponent } from './mixed-transactions-bar/mixed-transactions-bar.component';
 
 @NgModule({
   declarations: [ 
-   DashboardViewComponent,
+   DashboardViewComponent, CustomerTransactionsComponent, GenWidgetsComponent, ActorsComponent, ActorPerRegionComponent, MixedTransactionsBarComponent,
   ],
   imports: [
     CommonModule,
