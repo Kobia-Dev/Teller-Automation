@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-eft',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EftComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+   
+  }
 
   ngOnInit(): void {
   }
 
+  navigateToInternalTransfer(){
+this.router.navigate(['reports', 'internal-transfer']);
+  }
+  navigateToFundsTransactions(){
+    this.router.navigate(['transactions', 'funds-transactions'])
+  }
 }

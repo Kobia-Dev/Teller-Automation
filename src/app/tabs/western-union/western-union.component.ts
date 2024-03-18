@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-western-union',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WesternUnionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+   
+  }
 
   ngOnInit(): void {
   }
 
+//   navigateToWesternUnion(){
+// this.router.navigate(['reports', 'western-union']);
+//   }
+  navigateToFundsTransactions(){
+    this.router.navigate(['transactions', 'funds-transactions'])
+  }
 }
