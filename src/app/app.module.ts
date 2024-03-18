@@ -31,6 +31,8 @@ import {
 
 import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginator, MatPaginatorModule } from "@angular/material/paginator";
+
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -51,6 +53,7 @@ export function createTranslateLoader(http: HttpClient): any {
     RightSidebarComponent,
     AuthLayoutComponent,
     MainLayoutComponent,
+    
    
     // SwiftComponent,
     // EftComponent,
@@ -64,6 +67,7 @@ export function createTranslateLoader(http: HttpClient): any {
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatPaginatorModule,
     PerfectScrollbarModule,
     ClickOutsideModule,
     TranslateModule.forRoot({
