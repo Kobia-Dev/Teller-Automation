@@ -2,9 +2,14 @@
     <div class="content-block">
         <div class="block-header">
             <div class="col-sm-12">
-                <div class="card-header card-header-success text-center h4">
-                    Money Gram Transactions
-                </div>
+                <div class="tab d-flex" style="width: 100%;">
+                    <button class="tablinks h5" routerLink="/reports/rtgs" >RTGS</button>
+                    <button class="tablinks h5" routerLink="/reports/swift">SWIFT </button>
+                    <button class="tablinks h5" routerLink="/reports/eft">EFT</button>
+                    <button class="tablinks h5" routerLink="/reports/internal-transfer" >Internal transfer</button>
+                    <button class="tablinks h5" routerLink="/reports/money-gram" routerLinkActive="active">Money Gram</button>
+                    <button class="tablinks h5" routerLink="/reports/western-union">Western Union</button>
+                </div> 
                 <div class="card-body table-responsive">
                     <table class="table table-hover">
                         <thead>

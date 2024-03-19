@@ -34,6 +34,9 @@ export class StaffService {
   public getAllTellers(): Observable<any>{
     return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/tellers/getAll`)
   }
+  public getAllTransactions(): Observable<any>{
+    return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/Transaction/getAllTransactions`)
+  }
   // getTellers(): Observable<any[]> {
   //   return this.httpClient.get<any[]>('http://your-backend-api-url/tellers');
   // }
