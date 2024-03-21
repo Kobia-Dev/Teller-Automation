@@ -19,6 +19,6 @@ export class WesternUnionComponent implements OnInit {
 // this.router.navigate(['reports', 'western-union']);
 //   }
   navigateToFundsTransactions(){
-    this.router.navigate(['transactions', 'funds-transactions'])
+    this.router.navigate(['reports', 'rtgs'])
   }
 }
