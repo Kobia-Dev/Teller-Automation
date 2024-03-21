@@ -23,6 +23,14 @@ export class AdminService {
 
   public logoutAdmin(token: any): Observable<any> {
     return this.httpClient.post<any>(`${environment.baseUrl}/api/v1/auth/logout`, token);
+    
+  }
+
+  //http://192.168.91.46:7700/api/v1/auth/reset-password
+  public resetPassword(request: any): Observable<any> {
+    const url = `${environment.baseUrl}/api/v1/auth/reset-password`
+    return this.httpClient.post<any>(url, request);
+    
   }
 
   public getAllUsers(accessToken: any): Observable<any>{
