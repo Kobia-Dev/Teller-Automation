@@ -2,9 +2,14 @@
     <div class="content-block">
         <div class="block-header">
             <div class="col-sm-12">
-                <div class="card-header card-header-success text-center h4">
-                    Internal Transfers
-                </div>
+                <div class="tab d-flex" style="width: 100%;">
+                    <button class="tablinks h5" routerLink="/reports/rtgs" >RTGS</button>
+                    <button class="tablinks h5" routerLink="/reports/swift">SWIFT </button>
+                    <button class="tablinks h5" routerLink="/reports/eft">EFT</button>
+                    <button class="tablinks h5" routerLink="/reports/internal-transfer" routerLinkActive="active">Internal transfer</button>
+                    <button class="tablinks h5" routerLink="/reports/money-gram">Money Gram</button>
+                    <button class="tablinks h5" routerLink="/reports/western-union">Western Union</button>
+                </div> 
                 <div class="card-body table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -18,22 +23,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- <tr *ngFor="let teller of tellers">
-                                <td>{{ teller.name }}</td>
-                                <td>{{ teller.email }}</td>
-                                <td>{{ teller.national_id }}</td>
-                                <td>{{ teller.pfnumber }}</td>
-                                <td class="text-center">
-                                    Action buttons -->
-                                    <!-- <a routerLink="'/modify'" class="btn btn-primary mx-1" (click)="click()">
-                                        <i class="fa fa-edit"></i> Edit
-                                    </a>
-                                    <a routerLink="#" class="btn btn-danger mx-1">
-                                        <i class="fa fa-trash"></i> Delete
-                                    </a>
-    
-                                </td>
-                            </tr> -->
+                           
                         </tbody>
                     </table>
                     <!-- Pagination
