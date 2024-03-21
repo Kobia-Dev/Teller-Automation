@@ -14,7 +14,7 @@ export class ChangePasswordComponent implements OnInit {
   rest: any;
   formData:any;
   constructor(
-    private tabby:AdminService,
+    private http:AdminService,
     private formBuilder: FormBuilder,
     private router: Router,
     private snackbar:MatSnackBar
@@ -37,7 +37,7 @@ export class ChangePasswordComponent implements OnInit {
     if (this.formData.password !=  this.formData.confirmPassword ) {
       this.snackbar.open("Password do not match", 'close',{duration:3600})
     }else{
-      this.tabby.resetPassword(this.formData).subscribe(
+      this.http.changePassword(this.formData).subscribe(
         ((res) => {
           console.log(res);
           
