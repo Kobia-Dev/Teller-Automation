@@ -1,144 +1,131 @@
 <div>
-  <!-- Left Sidebar -->
-  <aside id="leftsidebar" class="sidebar bg"(mouseenter)="mouseHover($event)" (mouseleave)="mouseOut($event)">
-    <!-- Menu -->
-    <div class="menu">
-      <ul class="list"
-        [ngStyle]="{'position' : 'relative', 'max-height' : listMaxHeight+'px', 'max-width' : listMaxWidth+'px'}"
-        [perfectScrollbar]>
-        <!-- Top Most level menu -->
-        <li [class.active]="level1Menu === sidebarItem.moduleName && sidebarItem.submenu.length != 0"
-          *ngFor="let sidebarItem of sidebarItems" [routerLinkActive]="sidebarItem.submenu.length != 0 ? '' : 'active'">
-          <div class="header" *ngIf="sidebarItem.groupTitle === true">{{sidebarItem.title | translate}}</div>
-          <a [routerLink]="sidebarItem.class === '' ? [sidebarItem.path] : null" *ngIf="!sidebarItem.groupTitle;"
-            [ngClass]="[sidebarItem.class]" (click)="callLevel1Toggle($event, sidebarItem.moduleName)" class="menu-top">
-            <i-feather [name]="sidebarItem.icon" class="sidebarIcon l-bg-brown" ></i-feather>
-            <span class="hide-menu">{{sidebarItem.title | translate}}
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar bg" (mouseenter)="mouseHover($event)" (mouseleave)="mouseOut($event)">
+        <!-- Menu -->
+        <div class="menu">
+            <ul class="list" [ngStyle]="{'position' : 'relative', 'max-height' : listMaxHeight+'px', 'max-width' : listMaxWidth+'px'}" [perfectScrollbar]>
+                <!-- Top Most level menu -->
+                <li [class.active]="level1Menu === sidebarItem.moduleName && sidebarItem.submenu.length != 0" *ngFor="let sidebarItem of sidebarItems" [routerLinkActive]="sidebarItem.submenu.length != 0 ? '' : 'active'">
+                    <div class="header" *ngIf="sidebarItem.groupTitle === true">{{sidebarItem.title | translate}}</div>
+                    <a [routerLink]="sidebarItem.class === '' ? [sidebarItem.path] : null" *ngIf="!sidebarItem.groupTitle;" [ngClass]="[sidebarItem.class]" (click)="callLevel1Toggle($event, sidebarItem.moduleName)" class="menu-top">
+                        <i-feather [name]="sidebarItem.icon" class="sidebarIcon l-bg-brown"></i-feather>
+                        <span class="hide-menu">{{sidebarItem.title | translate}}
             </span>
-            <span *ngIf="sidebarItem.badge != '' " [ngClass]="[sidebarItem.badgeClass]">{{sidebarItem.badge}}</span>
-          </a>
-          <!-- First level menu -->
-          <ul class="ml-menu" *ngIf="sidebarItem.submenu.length > 0">
-            <li [ngClass]="level2Menu === sidebarSubItem.moduleName? 'activeSub':''"
-              *ngFor="let sidebarSubItem of sidebarItem.submenu"
-              [routerLinkActive]="sidebarSubItem.submenu.length > 0 ? '' : 'active'">
-              <a [routerLink]="sidebarSubItem.submenu.length > 0 ? null : [sidebarSubItem.path]"
-                (click)="callLevel2Toggle($event,sidebarSubItem.moduleName)" [ngClass]="[sidebarSubItem.class]">
+                        <span *ngIf="sidebarItem.badge != '' " [ngClass]="[sidebarItem.badgeClass]">{{sidebarItem.badge}}</span>
+                    </a>
+                    <!-- First level menu -->
+                    <ul class="ml-menu" *ngIf="sidebarItem.submenu.length > 0">
+                        <li [ngClass]="level2Menu === sidebarSubItem.moduleName? 'activeSub':''" *ngFor="let sidebarSubItem of sidebarItem.submenu" [routerLinkActive]="sidebarSubItem.submenu.length > 0 ? '' : 'active'">
+                            <a [routerLink]="sidebarSubItem.submenu.length > 0 ? null : [sidebarSubItem.path]" (click)="callLevel2Toggle($event,sidebarSubItem.moduleName)" [ngClass]="[sidebarSubItem.class]">
                 {{sidebarSubItem.title | translate}}
               </a>
-              <!-- Second level menu -->
-              <ul class="ml-menu-2" *ngIf="sidebarSubItem.submenu.length > 0">
-                <li *ngFor="let sidebarSubsubItem of sidebarSubItem.submenu"
-                  [ngClass]="level3Menu === sidebarSubsubItem.moduleName? 'activeSubSub':''"
-                  [routerLinkActive]="sidebarSubsubItem.submenu.length > 0 ? '' : 'active'">
-                  <a [routerLink]="sidebarSubsubItem.submenu.length > 0 ? null : [sidebarSubsubItem.path]"
-                    (click)="callLevel3Toggle($event,sidebarSubsubItem.moduleName)"
-                    [ngClass]="[sidebarSubsubItem.class]">
+                            <!-- Second level menu -->
+                            <ul class="ml-menu-2" *ngIf="sidebarSubItem.submenu.length > 0">
+                                <li *ngFor="let sidebarSubsubItem of sidebarSubItem.submenu" [ngClass]="level3Menu === sidebarSubsubItem.moduleName? 'activeSubSub':''" [routerLinkActive]="sidebarSubsubItem.submenu.length > 0 ? '' : 'active'">
+                                    <a [routerLink]="sidebarSubsubItem.submenu.length > 0 ? null : [sidebarSubsubItem.path]" (click)="callLevel3Toggle($event,sidebarSubsubItem.moduleName)" [ngClass]="[sidebarSubsubItem.class]">
                     {{sidebarSubsubItem.title | translate}}
                   </a>
-                </li>   
-              </ul>
-            </li>
-          </ul>
-        </li>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
 
 
 
-        <li  class="list_button  ">
-          <a [routerLink]="['/admin/dashboard/dashboard-view']" class="menu-top"> 
-            <i-feather name="airplay" class="sidebarIcon l-bg-brown"></i-feather>            
-            <span>Dashboard</span>
-          </a >         
-        </li> 
+                <li class="list_button  ">
+                    <a [routerLink]="['/admin/dashboard/actors']" class="menu-top">
+                        <i-feather name="airplay" class="sidebarIcon l-bg-brown"></i-feather>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="list_button">
+                    <div>
+                        <div (click)='closeNav1()' class="menu-top">
+                            <a [routerLink]="['/reports']" class="menu-top">
+                                <i-feather name="copy" class="sidebarIcon l-bg-brown"></i-feather>
+                                <span>Reports</span>
+                            </a>
+                        </div>
+                        <div [hidden]="isHidden1">
+                            <ul class='p-2 flex flex-col gap-1 '>
+                                <li><a [routerLink]="['/reports/mpesa-reports']" class='menu-top '> Mpesa Reports</a></li>
+                                <li><a [routerLink]="['/reports/funds-transfer-report']" class='menu-top '> Funds Transfer Reports</a></li>
+                                <li><a [routerLink]="['reports/international-money-transfer']" class='menu-top '> International money transfer </a></li>
+                                <li><a [routerLink]="['/reports/forex']" class='menu-top'> Forex </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="list_button  ">
+                    <a [routerLink]="['/tellers']" class="menu-top">
+                        <i-feather name="users" class="sidebarIcon l-bg-brown"></i-feather>
+                        <span>Tellers</span>
+                    </a>
+                </li>
 
 
+                <li class="list_button">
+                    <div>
+                        <div (click)='closeNav2()' class="menu-top">
+                            <a [routerLink]="['/transactions']" class="menu-top">
+                                <i-feather name="activity" class="sidebarIcon l-bg-brown"></i-feather>
+                                <span>Transactions</span>
+                            </a>
+                        </div>
+                        <div [hidden]="isHidden2">
+                            <ul class='p-2 flex flex-col gap-1 '>
+                                <li><a [routerLink]="['/transactions/atms-transactions']" class='menu-top '> Atms Transactions</a></li>
+                                <li><a [routerLink]="['/transactions/tellers-transactions']" class='menu-top '> Tellers Transactions</a></li>
+                                <li><a [routerLink]="['/transactions/mpesa-transactions']" class='menu-top '> Mpesa Transactions</a></li>
+                                <li><a [routerLink]="['/transactions/funds-transactions']" class='menu-top'> Funds Transfers</a></li>
+                                <li><a [routerLink]="['/transactions/back-office-transactions']" class='menu-top'> Back office Transactions</a></li>
+                                <li><a [routerLink]="['/transactions/end-of-day-transactions']" class='menu-top'> EOD Transactions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
 
+                <li class="list_button">
+                    <div>
+                        <div (click)='closeNav3()' class="menu-top">
+                            <a [routerLink]="['/back-office']" class="menu-top">
+                                <i-feather name="database" class="sidebarIcon l-bg-brown"></i-feather>
+                                <span>Back Office</span>
+                            </a>
+                        </div>
+                        <div [hidden]="isHidden3">
+                            <ul class='p-2 flex flex-col gap-1 '>
+                                <li><a [routerLink]="['/back-office/referrals']" class='menu-top '> Referrals</a></li>
+                                <li><a [routerLink]="['/back-office/modify-teller']" class='menu-top '> Modify Teller</a></li>
+                                <li><a [routerLink]="['/back-office/add-teller']" class='menu-top '> Add Teller</a></li>
 
-        <li  class="list_button">
-          <div>
-            <div (click)='closeNav1()' class="menu-top">
-              <a [routerLink]="['/reports']" class="menu-top"> 
-              <i-feather name="copy" class="sidebarIcon l-bg-brown"></i-feather> 
-            <span>Reports</span>
-              </a>
-          </div>
-            <div [hidden]="isHidden1">
-              <ul  class='p-2 flex flex-col gap-1 ' >
-                <li><a [routerLink]="['/reports/mpesa-reports']"  class='menu-top ' > Mpesa Reports</a></li>
-                 <li><a [routerLink]="['/reports/funds-transfer-report']"  class='menu-top ' > Funds Transfer Reports</a></li>
-                 <li><a [routerLink]="['reports/international-money-transfer']"  class='menu-top ' > International money transfer </a></li>
-                 <li><a [routerLink]="['/reports/forex']"  class='menu-top' > Forex </a></li>
-              </ul>    
-            </div>         
-          </div>         
-        </li>
-
-        <li  class="list_button  ">
-          <a [routerLink]="['/tellers']" class="menu-top"> 
-            <i-feather name="users" class="sidebarIcon l-bg-brown"></i-feather>            
-            <span>Tellers</span>
-          </a >         
-        </li> 
-
-
-        <li  class="list_button">
-          <div>
-            <div (click)='closeNav2()' class="menu-top">
-              <a [routerLink]="['/transactions']" class="menu-top"> 
-              <i-feather name="activity" class="sidebarIcon l-bg-brown"></i-feather> 
-            <span>Transactions</span>
-              </a>
-          </div>
-            <div [hidden]="isHidden2">
-              <ul  class='p-2 flex flex-col gap-1 ' >
-                <li><a [routerLink]="['/transactions/atms-transactions']"  class='menu-top ' > Atms Transactions</a></li>
-                 <li><a [routerLink]="['/transactions/tellers-transactions']"  class='menu-top ' > Tellers Transactions</a></li>
-                 <li><a [routerLink]="['/transactions/mpesa-transactions']"  class='menu-top ' > Mpesa Transactions</a></li>
-                 <li><a [routerLink]="['/transactions/funds-transactions']"  class='menu-top' > Funds Transfers</a></li>
-                 <li><a [routerLink]="['/transactions/back-office-transactions']"  class='menu-top' > Back office Transactions</a></li>
-                 <li><a [routerLink]="['/transactions/end-of-day-transactions']"  class='menu-top' > End Day Transactions</a></li>
-              </ul>    
-            </div>         
-          </div>         
-        </li>
-
-        <li  class="list_button">
-          <div>
-            <div (click)='closeNav3()' class="menu-top">
-              <a [routerLink]="['/back-office']" class="menu-top"> 
-              <i-feather name="database" class="sidebarIcon l-bg-brown"></i-feather> 
-            <span>Back Office</span>
-              </a>
-          </div>
-            <div [hidden]="isHidden3">
-              <ul  class='p-2 flex flex-col gap-1 ' >
-                <li><a [routerLink]="['/back-office/modify-teller']"  class='menu-top ' > Modify Teller</a></li>
-                 <li><a [routerLink]="['/back-office/add-teller']"  class='menu-top ' > Add Teller</a></li>
-                 
-              </ul>    
-            </div>         
-          </div>         
-        </li>
-
-    
-
-
-        
+                            </ul>
+                        </div>
+                    </div>
+                </li>
 
 
 
 
-        
-        <li>
-          <a class="" (click)="logout()" class="menu-top">
-            <i-feather name="log-out" class="sidebarIcon l-bg-brown"></i-feather>
-            <span class="hide-menu">Log Out
+
+
+
+
+
+
+                <li>
+                    <a class="" (click)="logout()" class="menu-top">
+                        <i-feather name="log-out" class="sidebarIcon l-bg-brown"></i-feather>
+                        <span class="hide-menu">Log Out
             </span>
-          </a>
-        </li>   
-      </ul>
-    </div>
-    <!-- #Menu -->
-  </aside>
-  <!-- #END# Left Sidebar -->
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- #Menu -->
+    </aside>
+    <!-- #END# Left Sidebar -->
 </div>

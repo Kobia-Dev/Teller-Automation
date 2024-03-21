@@ -1,0 +1,44 @@
+<section class="content">
+    <div class="content-block">
+        <div class="block-header">
+            <div class="col-sm-12">
+                <div class="tab d-flex" style="width: 100%;">
+                    <button class="tablinks h5" routerLink="/reports/rtgs" >RTGS</button>
+                    <button class="tablinks h5" routerLink="/reports/swift">SWIFT </button>
+                    <button class="tablinks h5" routerLink="/reports/eft">EFT</button>
+                    <button class="tablinks h5" routerLink="/reports/internal-transfer" routerLinkActive="active">Internal transfer</button>
+                    <button class="tablinks h5" routerLink="/reports/money-gram">Money Gram</button>
+                    <button class="tablinks h5" routerLink="/reports/western-union">Western Union</button>
+                </div> 
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Transaction Id</th>
+                                <th>Account Name</th>
+                                <th>Account No</th>
+                                <th>Beneficiaries'</th>
+                                <th>Amount</th>
+                                <th rowspan="2" class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                        </tbody>
+                    </table>
+                    <!-- Pagination
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item" *ngFor="let page of pages" [class.active]="currentPage === page">
+                            <a class="page-link" href="#" (click)="onPageChange(page)">{{ page }}</a>
+                        </li>
+                    </ul> -->
+                    <div>
+                        <button class="btn btn-primary" (click)="navigateToMoneyGram()">Next</button>
+                        <button class="btn btn-danger"(click)="navigateToFundsTransactions()">Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

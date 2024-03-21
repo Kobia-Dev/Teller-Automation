@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TellersRoutingModule } from './tellers-routing.module';
 import { TellerComponent } from './teller/teller.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { TellerComponent } from './teller/teller.component';
   ],
   imports: [
     CommonModule,
-    TellersRoutingModule
+    TellersRoutingModule,
+    MatPaginatorModule
   ]
 })
 export class TellersModule { }

@@ -66,7 +66,7 @@ export class SigninComponent extends UnsubscribeOnDestroyAdapter implements OnIn
             this.tokenStorage.saveToken(res.token);
             this.tokenStorage.saveUser(res);
             if (res.roles.includes(Role.Admin)) {
-              this.router.navigate(['/transactions']);
+              this.router.navigate(['/admin/dashboard/actors']);
             } else {
               // Redirect logic for non-admin users
             }

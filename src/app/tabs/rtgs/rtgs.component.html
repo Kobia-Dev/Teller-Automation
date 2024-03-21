@@ -1,0 +1,37 @@
+<section class="content">
+    <div class="content-block">
+        <div class="block-header">
+            <div class="tab d-flex" style="width: 100%;">
+                <button class="tablinks h5" routerLink="/reports/rtgs" routerLinkActive="active">RTGS</button>
+                <button class="tablinks h5" routerLink="/reports/swift">SWIFT </button>
+                <button class="tablinks h5" routerLink="/reports/eft">EFT</button>
+                <button class="tablinks h5" routerLink="/reports/internal-transfer">Internal transfer</button>
+                <button class="tablinks h5" routerLink="/reports/money-gram">Money Gram</button>
+                <button class="tablinks h5" routerLink="/reports/western-union">Western Union</button>
+            </div> 
+            
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Transaction Id</th>
+                            <th>Account Name</th>
+                            <th>Account No</th>
+                            <th>Beneficiaries'</th>
+                            <th>Amount</th>
+                            <th rowspan="2" class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                    </tbody>
+                </table>  
+                <div>
+                    <button class="btn btn-primary" (click)="navigateToSwift()">Next</button>
+                    <button class="btn btn-danger"(click)="navigateToFundsTransactions()">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

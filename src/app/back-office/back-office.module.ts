@@ -5,6 +5,7 @@ import { BackOfficeRoutingModule } from './back-office-routing.module';
 import { ReferralsComponent } from './referrals/referrals.component';
 import { AddTellerComponent } from './add-teller/add-teller.component';
 import { ModifyTellerComponent } from './modify-teller/modify-teller.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ModifyTellerComponent } from './modify-teller/modify-teller.component';
   ],
   imports: [
     CommonModule,
-    BackOfficeRoutingModule
+    BackOfficeRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class BackOfficeModule { }
