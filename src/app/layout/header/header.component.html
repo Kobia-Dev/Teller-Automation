@@ -96,11 +96,11 @@
                         <app-feather-icons [icon]="'mail'" [class]="'user-menu-icons'"></app-feather-icons>Inbox
                       </a>
                     </li> -->
-                    <!-- <li>
-                      <a href="#" onClick="return false;">
-                        <app-feather-icons [icon]="'settings'" [class]="'user-menu-icons'"></app-feather-icons>Settings
+                    <li>
+                      <a routerLink="/authentication/change-password" onClick="return false;">
+                        <app-feather-icons [icon]="'lock'" [class]="'user-menu-icons'"></app-feather-icons>Change Password
                       </a>
-                    </li> -->
+                    </li> 
                     <li>
                       <a href="javascript:void(0);" (click)="logout()">
                         <app-feather-icons [icon]="'log-out'" [class]="'user-menu-icons'"></app-feather-icons>Logout
