@@ -42,20 +42,24 @@ export class CustomerTransactionsComponent implements OnInit {
     this.chartOptions2 = {
       series: [
         {
-          name: "Customer to Agrodealer",
-          data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10]
+          name: "Customers",
+          data: [120, 70, 85, 30, 45, 35, 30, 25, 10, 25, 20, 10]
         },
         {
-          name: "Customer to Driver",
-          data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 32, 35]
+          name: "Tellers",
+          data: [15, 20, 25, 15, 10, 8, 6, 5, 7, 3, 2, 4]
         },
         {
-          name: "Customer to Farmer",
+          name: "GLs",
+          data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 45, 47]
+        },
+        {
+          name: "ATMs",
           data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 45, 47]
         },
       ],
       chart: {
-        height: 500,
+        height: 400,
         type: "line"
       },
       dataLabels: {
@@ -67,7 +71,7 @@ export class CustomerTransactionsComponent implements OnInit {
         dashArray: [0, 8, 5]
       },
       title: {
-        text: "Customer-Others transactions",
+        text: "Transactions Distribution",
         align: "left"
       },
       legend: {
