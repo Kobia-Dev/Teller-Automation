@@ -17,9 +17,9 @@
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-4">
                 <mat-card>
                     <mat-card-content>
-                        <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Actors Onboarded</p>
-                        <apx-chart *ngIf="chartOptions" [series]="chartOptions.series" [chart]="chartOptions.chart" [dataLabels]="chartOptions.dataLabels" [plotOptions]="chartOptions.plotOptions" [yaxis]="chartOptions.yaxis" [xaxis]="chartOptions.xaxis" [legend]="chartOptions.legend"
-                            [colors]="chartOptions.colors" [grid]="chartOptions.grid"></apx-chart>
+                        <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Income distributions</p>
+                        <app-actor-per-region></app-actor-per-region>
+
                     </mat-card-content>
                 </mat-card>
             </div>
