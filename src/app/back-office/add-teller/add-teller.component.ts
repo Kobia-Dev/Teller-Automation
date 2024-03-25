@@ -37,7 +37,7 @@ export class AddTellerComponent implements OnInit {
         this.snackBar.open("teller added successfully", "Close", {duration: 5000});
         this.router.navigateByUrl('/admin/dashboard/dashboard-view');
       }else{
-        alert("System busy, kindly try again latter");
+        alert("System busy, kindly try again later");
       }
     })
   }

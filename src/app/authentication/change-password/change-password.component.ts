@@ -11,8 +11,8 @@ import { AdminService } from 'src/app/admin/services/admin.service';
 })
 export class ChangePasswordComponent implements OnInit {
   changePasswordForm: FormGroup;
-  rest: any;
   formData:any;
+
   constructor(
     private http:AdminService,
     private formBuilder: FormBuilder,
@@ -51,11 +51,6 @@ export class ChangePasswordComponent implements OnInit {
       
     }
 
-    // Handle form submission (change password logic)
-    // ...
-
-    // Redirect to another component (e.g., welcome page) after successful password change
   
-     // Adjust the route path as needed
   }
 }
