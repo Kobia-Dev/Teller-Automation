@@ -33,7 +33,7 @@ export class GenWidgetsComponent implements OnInit {
         // this.renderCharts();
       }),
       error: ((error) => {
-        console.log("Error fetching agrodealers", error);
+        console.log("Error fetching tellers", error);
       }),
       complete: (() => { })
     })
@@ -46,7 +46,7 @@ export class GenWidgetsComponent implements OnInit {
         // this.renderCharts();
       }),
       error: ((error) => {
-        console.log("Error fetching agrodealers", error);
+        console.log("Error fetching transactions", error);
       }),
       complete: (() => { })
     })
