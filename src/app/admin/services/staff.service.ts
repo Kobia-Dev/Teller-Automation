@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { TokenStorageService } from 'src/app/core/service/token-storage.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -12,32 +13,30 @@ export class StaffService {
     private httpClient: HttpClient
   ) { }
 
-  // public registerStaff(staffReg: any): Observable<any> {
-  //   return this.httpClient.post<any>(`${environment.baseUrl}/api/v1/auth/register`, staffReg);
-  // }
-  public updateStaff(userId: any, staffUpdate: any, accessToken: any): Observable<any> {
+//this function is not working  
+  public updateTeller(tellerId: any, accessToken: any): Observable<any> {
     const headers = new HttpHeaders()
       .set('Authorization', `Bearer ${accessToken}`);
-    return this.httpClient.put<any>(`${environment.baseUrl}/api/v1/staff/update/by/userId/${userId}`, staffUpdate, { headers: headers });
+    return this.httpClient.put<any>(`${environment.baseUrl}/api/v1/tellers/modify/${tellerId}`, { headers: headers });
   }
-  // public getAllStaff(): Observable<any>{
-  //   return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/serviceProvider/get/all`);
-  // }
+  
   // add a function to create teller in the database
   public addTeller(teller: any): Observable<any> {
     return this.httpClient.post<any>(`${environment.baseUrl}/api/v1/tellers/add`, teller);
   }
-  //create function read all tellers from the database and display it as a list
-  // public getAllTellers(): Observable<any>{
-  //   return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/tellers/getAll`);
-  // }
+  
   public getAllTellers(): Observable<any>{
     return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/tellers/getAll`)
   }
   public getAllTransactions(): Observable<any>{
-    return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/Transaction/getAllTransactions`)
+    return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/Transaction/getAllTransactionss`)
   }
-  // getTellers(): Observable<any[]> {
-  //   return this.httpClient.get<any[]>('http://your-backend-api-url/tellers');
-  // }
+  public getAllWithdrawals(): Observable<any>{
+    return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/Transaction/getAllWithdrawals`);
+  }
+  public getAllDeposits(): Observable<any>{
+    return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/Transaction/getDeposits`);
+  }
+  
+  
 }
