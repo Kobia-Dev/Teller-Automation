@@ -13,17 +13,34 @@ export class ActorsComponent implements OnInit {
   tellers: any[] = [];
   tellersCount: number = 0;
 
+  withdrawals: any[] = [];
+  withdrawalsCount: number = 0;
+
   constructor(
-    private tellersService: StaffService
+    private tellersService: StaffService,
+    private withdrawalService: StaffService
   ) { }
 
   ngOnInit(): void {
   }
-  private getAgrodelears() {
+  private getAllTellers() {
     this.tellersService.getAllTellers().subscribe({
       next: ((response) => {
         this.tellers = response.entity;
         this.tellersCount = this.tellers.length;
+        // this.renderCharts();
+      }),
+      error: ((error) => {
+        console.log("Error fetching agrodealers", error);
+      }),
+      complete: (() => { })
+    })
+  }
+  private getAllWithdrawals() {
+    this.withdrawalService.getAllWithdrawals().subscribe({
+      next: ((response) => {
+        this.withdrawals = response.entity;
+        this.withdrawalsCount = this.tellers.length;
         // this.renderCharts();
       }),
       error: ((error) => {
