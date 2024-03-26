@@ -33,12 +33,14 @@ export class AddTellerComponent implements OnInit {
     console.log(this.addTellerForm.value);
     this.staffService.addTeller(this.addTellerForm.value).subscribe( (response) =>{
       console.log(response);
-      if(response.id != null){
-        this.snackBar.open("teller added successfully", "Close", {duration: 5000});
-        this.router.navigateByUrl('/admin/dashboard/dashboard-view');
-      }else{
-        alert("System busy, kindly try again later");
-      }
+      this.snackBar.open("teller added successfully", "Close", {duration: 5000});
+      // this.router.navigateByUrl('/admin/dashboard/dashboard-view');
+      // if(response.id != null){
+      //   this.snackBar.open("teller added successfully", "Close", {duration: 5000});
+      //   this.router.navigateByUrl('/admin/dashboard/dashboard-view');
+      // }else{
+      //   alert("System busy, kindly try again later");
+      // }
     })
   }
 
