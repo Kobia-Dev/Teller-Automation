@@ -1,30 +1,89 @@
-<section class="content">
+<section class="content" style="width: 60%; height: 40%; margin-left: 30%;">
     <div class="content-block">
         <div class="row text-start h4 mt-3">
             Admin Modify Teller
         </div>
-        <form class="row g-3 mt-2">
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" required formControlName="email">
-            </div>
-            <div class="col-md-6">
-                <label for="inputName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="inputName" required formControlName="name">
-            </div>
-            <div class="col-md-6">
-                <label for="inputNationalId" class="form-label">National Id</label>
-                <input type="text" class="form-control" id="inputNationalId" required formControlName="NationalId">
+        <form class="validate-form mt-3" [formGroup]="modifyTellerForm" (ngSubmit)="onSubmit()">
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Id</mat-label>
+                    <input matInput type="text" formControlName="id" />
+                    <mat-icon matPrefix>account_box</mat-icon>
+                    <mat-error *ngIf="modifyTellerForm.get( 'id')?.hasError( 'required') ">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
             </div>
 
-            <div class="col-md-6">
-                <label for="inputPfNo" class="form-label">Pf Number</label>
-                <input type="text" class="form-control" id="inputPfNo" required formControlName="pfNumber">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" formControlName="name" />
+                    <mat-icon matPrefix>account_box</mat-icon>
+                    <mat-error *ngIf="modifyTellerForm.get( 'name')?.hasError( 'required') ">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
             </div>
 
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary mt-5" style="margin-left: 45%;">Submit</button>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="text" formControlName="email" />
+                    <mat-icon matPrefix>mail_box</mat-icon>
+                    <mat-error *ngIf="modifyTellerForm.get( 'email')?.hasError( 'required') ">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
             </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>ID Number</mat-label>
+                    <input matInput type="text" formControlName="nationalId" />
+                    <mat-icon matPrefix>account_box</mat-icon>
+                    <mat-error *ngIf="modifyTellerForm.get( 'nationalId')?.hasError( 'required') ">
+                        ID Number is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Role</mat-label>
+                    <input matInput type="text" formControlName="role" />
+                    <mat-icon matPrefix>role</mat-icon>
+                    <mat-error *ngIf="modifyTellerForm.get( 'role')?.hasError( 'required') ">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div *ngIf="error " class="alert alert-danger col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2 ">{{error}}</div>
+
+
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2  ">
+
+                <button class="btn w-50 bg-c-blue" mat-raised-button [class.auth-spinner]="loading" [disabled]="loading" [disabled]="!modifyTellerForm.valid " type="submit" style="margin-left: 25%;">Enable</button>
+            </div>
+
+            <!-- <div class="row ">
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-2 text ">
+                    <span>
+                  <a routerLink="/authentication/forgot-password ">Forgot password</a>
+                </span>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-2 text ">
+                    <span>
+                  <a routerLink="/authentication/signup ">Create account</a>
+                </span>
+                </div>
+            </div> -->
+
         </form>
     </div>
 </section>

@@ -12,7 +12,7 @@ import { WesternUnionComponent } from '../tabs/western-union/western-union.compo
 import { MoneyGramComponent } from '../tabs/money-gram/money-gram.component';
 
 const routes: Routes = [
-  {path: '', component: MpesaReportsComponent},
+  {path: '', component: FundsTransferReportComponent},
   {path: 'mpesa-reports', component: MpesaReportsComponent},
   {path: 'funds-transfer-report', component: FundsTransferReportComponent},
   {path: 'international-money-transfer', component: InternationalMoneyTransferComponent},

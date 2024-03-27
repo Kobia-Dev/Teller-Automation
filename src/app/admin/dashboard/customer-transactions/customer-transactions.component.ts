@@ -47,7 +47,7 @@ export class CustomerTransactionsComponent implements OnInit {
         },
         {
           name: "Tellers",
-          data: [15, 20, 25, 15, 10, 8, 6, 5, 7, 3, 2, 4]
+          data: [15, 20, 25, 15, 10, 8, 6, 5, 7, 3, 2, 35]
         },
         {
           name: "GLs",

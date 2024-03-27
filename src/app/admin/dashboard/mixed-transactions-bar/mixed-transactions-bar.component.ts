@@ -31,7 +31,7 @@ export class MixedTransactionsBarComponent implements OnInit {
       chart: {
         type: "donut"
       },
-      labels: ["Livestock", "Crops"],
+      labels: ["IMT", "Transactions", "Loans", "Atms"],
       responsive: [
         {
           breakpoint: 480,

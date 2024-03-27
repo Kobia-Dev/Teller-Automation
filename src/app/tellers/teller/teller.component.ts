@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { StaffService } from '../../admin/services/staff.service';
 import { Router } from '@angular/router';
 import { MatPaginator, PageEvent } from "@angular/material/paginator";
+import { TransactionService } from 'src/app/admin/services/transaction.service';
 
 @Component({
   selector: 'app-teller',
@@ -18,7 +18,7 @@ export class TellerComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
-    private tellerService: StaffService,
+    private tellerService: TransactionService,
     private router: Router
   ) {}
 

@@ -9,7 +9,7 @@ import { EndOfDayTransactionsComponent } from './end-of-day-transactions/end-of-
 
 
 const routes: Routes = [
-  {path:'', component: AtmsTransactionsComponent},
+  {path:'', component: TellersTransactionsComponent},
   {path:'tellers-transactions', component: TellersTransactionsComponent},
   {path:'atms-transactions', component: AtmsTransactionsComponent},
   {path:'mpesa-transactions', component: MpesaTransactionsComponent},
