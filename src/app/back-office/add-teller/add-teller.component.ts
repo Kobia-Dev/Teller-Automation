@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { StaffService } from '../../admin/services/staff.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TransactionService } from 'src/app/admin/services/transaction.service';
 
 @Component({
   selector: 'app-add-teller',
@@ -17,7 +17,7 @@ export class AddTellerComponent implements OnInit {
 loading: any;
 
   constructor(private fb: FormBuilder,
-    private staffService: StaffService,
+    private transactionService: TransactionService,
     private router: Router,
     private snackBar: MatSnackBar
     ) { }

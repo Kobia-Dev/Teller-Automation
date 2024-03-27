@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
-export class StaffService {
+export class TransactionService {
   enable(value: any) {
     throw new Error('Method not implemented.');
   }

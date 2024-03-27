@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartTitleOptions } from 'chart.js';
 import { Series } from 'd3-shape';
-import { StaffService } from '../../services/staff.service';
+import { TransactionService } from '../../services/transaction.service';
 
 @Component({
   selector: 'app-actors',
@@ -17,9 +17,8 @@ export class ActorsComponent implements OnInit {
   withdrawalsCount: number = 0;
 
   constructor(
-    private tellersService: StaffService,
-    private withdrawalService: StaffService
-  ) { }
+    private tellersService: TransactionService,
+    private withdrawalService: TransactionService  ) { }
 
   ngOnInit(): void {
   }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs';
-import { StaffService } from 'src/app/admin/services/staff.service';
+import { TransactionService } from 'src/app/admin/services/transaction.service';
 import { AuthService } from 'src/app/core/service/auth.service';
 import { TokenStorageService } from 'src/app/core/service/token-storage.service';
 
@@ -21,7 +21,7 @@ export class ModifyTellerComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private tellerService: StaffService,
+    private tellerService: TransactionService,
     private tokenStorage: TokenStorageService
   ) {}
 
