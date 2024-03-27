@@ -13,6 +13,8 @@ export class AddTellerComponent implements OnInit {
 
 
   addTellerForm: FormGroup;
+  error: any;
+loading: any;
 
   constructor(private fb: FormBuilder,
     private staffService: StaffService,
@@ -29,19 +31,19 @@ export class AddTellerComponent implements OnInit {
 
     })
   }
-  addTeller(){
-    console.log(this.addTellerForm.value);
-    this.staffService.addTeller(this.addTellerForm.value).subscribe( (response) =>{
-      console.log(response);
-      this.snackBar.open("teller added successfully", "Close", {duration: 5000});
-      // this.router.navigateByUrl('/admin/dashboard/dashboard-view');
-      // if(response.id != null){
-      //   this.snackBar.open("teller added successfully", "Close", {duration: 5000});
-      //   this.router.navigateByUrl('/admin/dashboard/dashboard-view');
-      // }else{
-      //   alert("System busy, kindly try again later");
-      // }
-    })
+  onSubmit(){
+    // console.log(this.addTellerForm.value);
+    // this.staffService.addTeller(this.addTellerForm.value).subscribe( (response) =>{
+    //   console.log(response);
+    //   this.snackBar.open("teller added successfully", "Close", {duration: 5000});
+    //    this.router.navigateByUrl('/admin/dashboard/dashboard-view');
+    //   if(response.id != null){
+    //      this.snackBar.open("teller added successfully", "Close", {duration: 5000});
+    //     this.router.navigateByUrl('/admin/dashboard/dashboard-view');
+    //  }else{
+    //      alert("System busy, kindly try again later");
+    //    }
+    // })
   }
 
 }

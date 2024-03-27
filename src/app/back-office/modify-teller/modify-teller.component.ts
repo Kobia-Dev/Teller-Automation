@@ -12,7 +12,7 @@ import { TokenStorageService } from 'src/app/core/service/token-storage.service'
   styleUrls: ['./modify-teller.component.css']
 })
 export class ModifyTellerComponent implements OnInit {
-  modifyTellerhForm: FormGroup;
+  modifyTellerForm: FormGroup;
   submitted = false;
   loading = false;
   error = "";
@@ -26,7 +26,7 @@ export class ModifyTellerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.modifyTellerhForm = this.formBuilder.group({
+    this.modifyTellerForm = this.formBuilder.group({
       id: ["", Validators.required],
       name: ["", Validators.required],
       email: ["", Validators.required],
@@ -38,16 +38,16 @@ export class ModifyTellerComponent implements OnInit {
     this.submitted = true;
     this.loading = true;
     this.error = "";
-    console.log ("submission form data",this.modifyTellerhForm.value)
+    console.log ("submission form data",this.modifyTellerForm.value)
     
-    if (this.modifyTellerhForm.invalid) {
+    if (this.modifyTellerForm.invalid) {
       this.error = "All the required fields !";
       this.submitted = false;
       this.loading = false;
       return;
     }
 
-    this.tellerService.updateTeller(this.modifyTellerhForm.value, this.tokenStorage)
+    this.tellerService.updateTeller(this.modifyTellerForm.value, this.tokenStorage)
       .subscribe({
         next: (res) => {
           console.log("Response", res); // Log the entire response object

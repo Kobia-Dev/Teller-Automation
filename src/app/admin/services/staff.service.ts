@@ -8,6 +8,9 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class StaffService {
+  enable(value: any) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(
     private httpClient: HttpClient
