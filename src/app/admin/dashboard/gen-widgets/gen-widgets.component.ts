@@ -40,7 +40,7 @@ export class GenWidgetsComponent implements OnInit {
         this.tellersCount = this.tellers.length;
       }),
       error: ((error) => {
-        console.log("Error fetching agrodealers", error);
+        console.log("Error fetching tellers", error);
       }),
       complete: (() => { })
     })
@@ -77,7 +77,7 @@ export class GenWidgetsComponent implements OnInit {
         this.depositsCount = this.deposits.length;
       }),
       error: ((error) => {
-        console.log("Error fetching agrodealers", error);
+        console.log("Error fetching transactions", error);
       }),
       complete: (() => { })
     })
