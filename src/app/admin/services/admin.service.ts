@@ -26,11 +26,15 @@ export class AdminService {
     
   }
 
-  //http://192.168.91.46:7700/api/v1/auth/reset-password
+  //http://192.168.90.168:7700/api/v1/auth/reset-password
    changePassword(request: any): Observable<any> {
     const url = `${environment.baseUrl}/api/v1/auth/reset-password`
     return this.httpClient.post<any>(url, request);
-    
+  }
+
+  forgotPassword(request: any): Observable<any> {
+    const url = `${environment.baseUrl}/api/v1/auth/forgot/password`
+    return this.httpClient.post<any>(url, request)
   }
 
   public getAllUsers(accessToken: any): Observable<any>{
