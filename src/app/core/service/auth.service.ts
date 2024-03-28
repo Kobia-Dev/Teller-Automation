@@ -40,9 +40,9 @@ export class AuthService {
     );
   }
 
-  forgotPassword(params: any): Observable<{ message: string }> {
-    const resetPasswordUrl = `${environment.baseUrl}/p2p/reset/send-token`;
+  // forgotPassword(params: any): Observable<{ message: string }> {
+  //   const resetPasswordUrl = `${environment.baseUrl}/p2p/reset/send-token`;
 
-    return this.http.post<{ message: string }>(resetPasswordUrl, params);
-  }
+  //   return this.http.post<{ message: string }>(resetPasswordUrl, params);
+  // }
 }
