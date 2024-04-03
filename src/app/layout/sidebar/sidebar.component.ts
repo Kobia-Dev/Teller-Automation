@@ -74,7 +74,7 @@ export class SidebarComponent extends BaseComponent implements OnInit, OnDestroy
     this.routerObj = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
 
-        const role = ["ADMIN", "STAFF", "MANUFACTURER", "WAREHOUSE", "SERVICE_PROVIDER"];
+        const role = ["ADMIN", "STAFF", "SERVICE_PROVIDER"];
 
         const currenturl = event.url.split("?")[0];
         const firstString = currenturl.split("/").slice(1)[0];
