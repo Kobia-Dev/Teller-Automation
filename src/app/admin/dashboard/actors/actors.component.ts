@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartTitleOptions } from 'chart.js';
 import { Series } from 'd3-shape';
 import { StaffService } from '../../services/staff.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-actors',
@@ -16,9 +19,20 @@ export class ActorsComponent implements OnInit {
   withdrawals: any[] = [];
   withdrawalsCount: number = 0;
 
+  dataSource: MatTableDataSource<any>;
+  displayedColumns: string[] = ['no', 'fullName', 'email', 'phoneNuo', 'status', 'actions'];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+
+  isLoading = true;
+  
+
+
   constructor(
     private tellersService: StaffService,
-    private withdrawalService: StaffService
+    private withdrawalService: StaffService,
+    
   ) { }
 
   ngOnInit(): void {
