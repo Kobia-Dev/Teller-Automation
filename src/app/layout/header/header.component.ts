@@ -37,6 +37,7 @@ export class HeaderComponent
   lastName: string;
   email: string;
   theUserRole: any;
+navigateToChangePassword: any;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -135,6 +136,7 @@ export class HeaderComponent
       this.flagvalue = val.map((element) => element.flag);
     }
   }
+  
 
   ngAfterViewInit() {
     // set theme on startup

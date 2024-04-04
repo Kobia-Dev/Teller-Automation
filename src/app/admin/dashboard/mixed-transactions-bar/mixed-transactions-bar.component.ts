@@ -1,4 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  ApexNonAxisChartSeries,
+  ApexResponsive,
+  ApexChart
+} from "ng-apexcharts";
+
+export type ChartOptions = {
+  series: ApexNonAxisChartSeries;
+  chart: ApexChart;
+  responsive: ApexResponsive[];
+  labels: any;
+};
+
+
 
 @Component({
   selector: 'app-mixed-transactions-bar',
@@ -7,7 +21,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MixedTransactionsBarComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild("chart") chart: MixedTransactionsBarComponent;
+  public chartOptions: Partial<ChartOptions>;
+
+
+  constructor() { 
+    this.chartOptions = {
+      series: [44, 55],
+      chart: {
+        type: "donut"
+      },
+      labels: ["IMT", "Transactions", "Loans", "Atms"],
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 600
+            },
+            legend: {
+              position: "bottom"
+            }
+          }
+        }
+      ]
+    }; 
+  }
 
   ngOnInit(): void {
   }

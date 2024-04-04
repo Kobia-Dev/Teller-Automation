@@ -22,6 +22,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatDialogModule } from "@angular/material/dialog";
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatDialogModule } from "@angular/material/dialog";
     SignupComponent,
     LockedComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ChangePasswordComponent
   ],
   imports: [
     CommonModule,

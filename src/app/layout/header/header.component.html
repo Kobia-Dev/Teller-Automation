@@ -1,15 +1,15 @@
-<nav #navbar class="navbar active">
-  <div class="container-fluid bg wbg">
-    <div class="navbar-header bg">
+<nav #navbar class="navbar">
+  <div class="container-fluid bg wbg" style="height: 60px;">
+    <div class="bg">
       <a href="#" onClick="return false;" class="navbar-toggle collapsed"
         (click)="isNavbarCollapsed = !isNavbarCollapsed" aria-expanded="false"></a>
       <a href="#" onClick="return false;" class="bars" (click)="mobileMenuSidebarOpen($event,'overlay-open')"></a>
       <a class="navbar-brand" routerLink={{homePage}}>
-        <img src="assets\images\Equity_logo.png" width="50px" height="40px" alt="" />
+        <img src="assets\images\Equity_logo.png" width="50px" height="40px" alt="" style="margin-left: -80%;">
         <span class="logo-name">Teller Automation</span>
       </a>
     </div>
-    <div class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed" >
+    <div class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed"  style="position: absolute; top: 5%;left: 65%;">
       <ul class="float-start collapse-menu-icon">
         <li>
           <button mat-icon-button (click)="callSidemenuCollapse()" class="sidemenu-collapse">
@@ -63,9 +63,9 @@
                         <i class="material-icons">access_time</i> {{notification.time}}
                       </span>
                     </span>
-                    <span class="nfc-close">
+                    <!-- <span class="nfc-close">
                       <app-feather-icons [icon]="'x'" [class]="'user-menu-icons'"></app-feather-icons>
-                    </span>
+                    </span> -->
                   </a>
                 </li>
               </ul>
@@ -96,11 +96,11 @@
                         <app-feather-icons [icon]="'mail'" [class]="'user-menu-icons'"></app-feather-icons>Inbox
                       </a>
                     </li> -->
-                    <!-- <li>
-                      <a href="#" onClick="return false;">
-                        <app-feather-icons [icon]="'settings'" [class]="'user-menu-icons'"></app-feather-icons>Settings
+                    <li>
+                      <a routerLink="/authentication/change-password" onClick="return false;">
+                        <app-feather-icons [icon]="'lock'" [class]="'user-menu-icons'"></app-feather-icons>Change Password
                       </a>
-                    </li> -->
+                    </li> 
                     <li>
                       <a href="javascript:void(0);" (click)="logout()">
                         <app-feather-icons [icon]="'log-out'" [class]="'user-menu-icons'"></app-feather-icons>Logout

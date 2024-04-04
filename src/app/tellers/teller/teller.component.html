@@ -10,6 +10,7 @@
                     <thead>
                         <tr>
                             <th>Teller</th>
+                            <th>Teller</th>
                             <th>Email</th>
                             <th>Id Number</th>
                             <th>PF Number</th>
@@ -18,6 +19,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let teller of getDisplayedTellers()">
+                            <td>{{ teller.id }}</td>
                             <td>{{ teller.name }}</td>
                             <td>{{ teller.email }}</td>
                             <td>{{ teller.national_id }}</td>
@@ -27,8 +29,9 @@
                                 <a routerLink="'/modify'" class="btn btn-primary mx-1" (click)="click()">
                                     <i class="fa fa-edit"></i> Edit
                                 </a>
-                                <a routerLink="#" class="btn btn-danger mx-1">
-                                    <i class="fa fa-trash"></i> Delete
+                                <a routerLink="#" class="btn btn-warning mx-1">
+                                    <!-- <i class="fa fa-trash"></i> -->
+                                     Deactivate
                                 </a>
 
                             </td>

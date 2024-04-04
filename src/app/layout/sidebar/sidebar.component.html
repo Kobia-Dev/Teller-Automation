@@ -98,6 +98,7 @@
                         </div>
                         <div [hidden]="isHidden3">
                             <ul class='p-2 flex flex-col gap-1 '>
+                                <li><a [routerLink]="['/authentication/change-password']" class='menu-top '> Change Password</a></li>
                                 <li><a [routerLink]="['/back-office/referrals']" class='menu-top '> Referrals</a></li>
                                 <li><a [routerLink]="['/back-office/modify-teller']" class='menu-top '> Modify Teller</a></li>
                                 <li><a [routerLink]="['/back-office/add-teller']" class='menu-top '> Add Teller</a></li>
@@ -106,16 +107,6 @@
                         </div>
                     </div>
                 </li>
-
-
-
-
-
-
-
-
-
-
                 <li>
                     <a class="" (click)="logout()" class="menu-top">
                         <i-feather name="log-out" class="sidebarIcon l-bg-brown"></i-feather>
