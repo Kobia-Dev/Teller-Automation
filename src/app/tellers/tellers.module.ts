@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { TellersRoutingModule } from './tellers-routing.module';
 import { TellerComponent } from './teller/teller.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   imports: [
     CommonModule,
     TellersRoutingModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatIconModule,
+    MatDialog,
+    MatDialogConfig
   ]
 })
 export class TellersModule { }

@@ -3,14 +3,14 @@
         <div class="row text-start h4 mt-3">
             Admin Modify Teller
         </div>
-        <form class="validate-form mt-3" [formGroup]="modifyTellerhForm" (ngSubmit)="onSubmit()">
+        <form class="validate-form mt-3" [formGroup]="modifyTellerForm" (ngSubmit)="onSubmit()">
 
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Id</mat-label>
                     <input matInput type="text" formControlName="id" />
                     <mat-icon matPrefix>account_box</mat-icon>
-                    <mat-error *ngIf="modifyTellerhForm.get( 'id')?.hasError( 'required') ">
+                    <mat-error *ngIf="modifyTellerForm.get( 'id')?.hasError( 'required') ">
                         Name is required
                     </mat-error>
                 </mat-form-field>
@@ -21,7 +21,7 @@
                     <mat-label>Name</mat-label>
                     <input matInput type="text" formControlName="name" />
                     <mat-icon matPrefix>account_box</mat-icon>
-                    <mat-error *ngIf="modifyTellerhForm.get( 'name')?.hasError( 'required') ">
+                    <mat-error *ngIf="modifyTellerForm.get( 'name')?.hasError( 'required') ">
                         Name is required
                     </mat-error>
                 </mat-form-field>
@@ -32,7 +32,7 @@
                     <mat-label>Email</mat-label>
                     <input matInput type="text" formControlName="email" />
                     <mat-icon matPrefix>mail_box</mat-icon>
-                    <mat-error *ngIf="modifyTellerhForm.get( 'email')?.hasError( 'required') ">
+                    <mat-error *ngIf="modifyTellerForm.get( 'email')?.hasError( 'required') ">
                         Name is required
                     </mat-error>
                 </mat-form-field>
@@ -43,7 +43,7 @@
                     <mat-label>ID Number</mat-label>
                     <input matInput type="text" formControlName="nationalId" />
                     <mat-icon matPrefix>account_box</mat-icon>
-                    <mat-error *ngIf="modifyTellerhForm.get( 'nationalId')?.hasError( 'required') ">
+                    <mat-error *ngIf="modifyTellerForm.get( 'nationalId')?.hasError( 'required') ">
                         ID Number is required
                     </mat-error>
                 </mat-form-field>
@@ -54,7 +54,7 @@
                     <mat-label>Role</mat-label>
                     <input matInput type="text" formControlName="role" />
                     <mat-icon matPrefix>role</mat-icon>
-                    <mat-error *ngIf="modifyTellerhForm.get( 'role')?.hasError( 'required') ">
+                    <mat-error *ngIf="modifyTellerForm.get( 'role')?.hasError( 'required') ">
                         Name is required
                     </mat-error>
                 </mat-form-field>
@@ -67,7 +67,7 @@
 
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2  ">
 
-                <button class="btn w-50 bg-c-blue" mat-raised-button [class.auth-spinner]="loading" [disabled]="loading" [disabled]="!modifyTellerhForm.valid " type="submit" style="margin-left: 25%;">Login</button>
+                <button class="btn w-50 bg-c-blue" mat-raised-button [class.auth-spinner]="loading" [disabled]="loading" [disabled]="!modifyTellerForm.valid " type="submit" style="margin-left: 25%;">Enable</button>
             </div>
 
             <!-- <div class="row ">

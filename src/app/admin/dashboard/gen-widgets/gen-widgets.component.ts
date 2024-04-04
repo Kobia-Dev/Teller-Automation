@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StaffService } from '../../services/staff.service';
+import { TransactionService } from '../../services/transaction.service';
 
 @Component({
   selector: 'app-gen-widgets',
@@ -22,10 +22,9 @@ export class GenWidgetsComponent implements OnInit {
   depositsCount: number = 0;
 
   constructor(
-    private tellerservice: StaffService,
-    private withdrawalService: StaffService,
-    private depositsService: StaffService
-    
+    private tellerservice: TransactionService,
+    private withdrawalService: TransactionService,
+    private depositsService: TransactionService    
 
   ) { }
 

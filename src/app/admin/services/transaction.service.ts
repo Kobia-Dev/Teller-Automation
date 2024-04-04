@@ -7,7 +7,10 @@ import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
-export class StaffService {
+export class TransactionService {
+  enable(value: any) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(
     private httpClient: HttpClient
@@ -29,7 +32,7 @@ export class StaffService {
     return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/tellers/getAll`)
   }
   public getAllTransactions(): Observable<any>{
-    return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/Transaction/getAllTransactionss`)
+    return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/Transaction/getAllTransactions`)
   }
   public getAllWithdrawals(): Observable<any>{
     return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/Transaction/getAllWithdrawals`);

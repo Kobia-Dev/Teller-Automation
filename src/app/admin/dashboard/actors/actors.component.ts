@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartTitleOptions } from 'chart.js';
 import { Series } from 'd3-shape';
-import { StaffService } from '../../services/staff.service';
+
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { TransactionService } from '../../services/transaction.service';
 
 @Component({
   selector: 'app-actors',
@@ -30,15 +31,14 @@ export class ActorsComponent implements OnInit {
 
 
   constructor(
-    private tellersService: StaffService,
-    private withdrawalService: StaffService,
-    
+    private tellerService: TransactionService,
+    private withdrawalService: TransactionService
   ) { }
 
   ngOnInit(): void {
   }
   private getAllTellers() {
-    this.tellersService.getAllTellers().subscribe({
+    this.tellerService.getAllTellers().subscribe({
       next: ((response) => {
         this.tellers = response.entity;
         this.tellersCount = this.tellers.length;

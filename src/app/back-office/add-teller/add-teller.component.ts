@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { StaffService } from '../../admin/services/staff.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TransactionService } from 'src/app/admin/services/transaction.service';
 
 @Component({
   selector: 'app-add-teller',
@@ -13,9 +13,11 @@ export class AddTellerComponent implements OnInit {
 
 
   addTellerForm: FormGroup;
+  error: any;
+loading: any;
 
   constructor(private fb: FormBuilder,
-    private staffService: StaffService,
+    private transactionService: TransactionService,
     private router: Router,
     private snackBar: MatSnackBar
     ) { }
@@ -29,17 +31,19 @@ export class AddTellerComponent implements OnInit {
 
     })
   }
-  addTeller(){
-    console.log(this.addTellerForm.value);
-    this.staffService.addTeller(this.addTellerForm.value).subscribe( (response) =>{
-      console.log(response);
-      if(response.id != null){
-        this.snackBar.open("teller added successfully", "Close", {duration: 5000});
-        this.router.navigateByUrl('/admin/dashboard/dashboard-view');
-      }else{
-        alert("System busy, kindly try again later");
-      }
-    })
+  onSubmit(){
+    // console.log(this.addTellerForm.value);
+    // this.staffService.addTeller(this.addTellerForm.value).subscribe( (response) =>{
+    //   console.log(response);
+    //   this.snackBar.open("teller added successfully", "Close", {duration: 5000});
+    //    this.router.navigateByUrl('/admin/dashboard/dashboard-view');
+    //   if(response.id != null){
+    //      this.snackBar.open("teller added successfully", "Close", {duration: 5000});
+    //     this.router.navigateByUrl('/admin/dashboard/dashboard-view');
+    //  }else{
+    //      alert("System busy, kindly try again later");
+    //    }
+    // })
   }
 
 }

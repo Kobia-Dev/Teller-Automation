@@ -13,7 +13,9 @@ import { TokenStorageService } from "../service/token-storage.service";
   providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router, private tokenStorage: TokenStorageService) {}
+  constructor(private authService: AuthService,
+              private router: Router, 
+              private tokenStorage: TokenStorageService) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (this.tokenStorage.getUser()) {

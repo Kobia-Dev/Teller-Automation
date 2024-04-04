@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs';
-import { StaffService } from 'src/app/admin/services/staff.service';
+import { TransactionService } from 'src/app/admin/services/transaction.service';
 import { AuthService } from 'src/app/core/service/auth.service';
 import { TokenStorageService } from 'src/app/core/service/token-storage.service';
 
@@ -12,7 +12,7 @@ import { TokenStorageService } from 'src/app/core/service/token-storage.service'
   styleUrls: ['./modify-teller.component.css']
 })
 export class ModifyTellerComponent implements OnInit {
-  modifyTellerhForm: FormGroup;
+  modifyTellerForm: FormGroup;
   submitted = false;
   loading = false;
   error = "";
@@ -21,12 +21,12 @@ export class ModifyTellerComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private tellerService: StaffService,
+    private tellerService: TransactionService,
     private tokenStorage: TokenStorageService
   ) {}
 
   ngOnInit() {
-    this.modifyTellerhForm = this.formBuilder.group({
+    this.modifyTellerForm = this.formBuilder.group({
       id: ["", Validators.required],
       name: ["", Validators.required],
       email: ["", Validators.required],
@@ -38,16 +38,16 @@ export class ModifyTellerComponent implements OnInit {
     this.submitted = true;
     this.loading = true;
     this.error = "";
-    console.log ("submission form data",this.modifyTellerhForm.value)
+    console.log ("submission form data",this.modifyTellerForm.value)
     
-    if (this.modifyTellerhForm.invalid) {
+    if (this.modifyTellerForm.invalid) {
       this.error = "All the required fields !";
       this.submitted = false;
       this.loading = false;
       return;
     }
 
-    this.tellerService.updateTeller(this.modifyTellerhForm.value, this.tokenStorage)
+    this.tellerService.updateTeller(this.modifyTellerForm.value, this.tokenStorage)
       .subscribe({
         next: (res) => {
           console.log("Response", res); // Log the entire response object
