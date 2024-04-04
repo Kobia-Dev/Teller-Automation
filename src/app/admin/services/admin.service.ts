@@ -26,7 +26,7 @@ export class AdminService {
     
   }
 
-  //http://192.168.91.149:7700/api/v1/auth/reset-password
+  //http://192.168.89.38:7700/api/v1/auth/reset-password
    changePassword(request: any): Observable<any> {
     const url = `${environment.baseUrl}/api/v1/auth/reset-password`
     return this.httpClient.post<any>(url, request);

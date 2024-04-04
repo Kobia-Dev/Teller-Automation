@@ -1,117 +1,115 @@
 <!-- Widgets -->
 <div class="row">
     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-        <div class="info-box7 bg-c-blue order-info-box7">
-            <div class="info-box7-block">
-                <h2 class="text-end"><span class="float-start">
-                    {{ tellersCount }}
-                </span><i class="fas fa-user-plus"></i>
-                </h2>
-                <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Tellers</p>
-                  <div><a routerLink="/tellers">click</a> </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
-        <div class="info-box7 bg-c-blue order-info-box7">
-            <div class="info-box7-block">
-                <h2 class="text-end"><span class="float-start">
-                    
-                    <!-- {{ customersCount }} -->
-                </span><i class="fas fa-users"></i>
-                </h2>
-                <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Customers</p>
-                  <a class="info-box-link" routerLink="/transactions/funds-transactions">click</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
-        <div class="info-box7 bg-c-blue order-info-box7">
-            <div class="info-box7-block">
-                <h2 class="text-end"><span class="float-start">
-                    {{ transactionsCount }}
-                </span><i class="fa fa-money-check-dollar"></i>
-                </h2>
-                <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Transactions</p>
-                <div><a routerLink="/transactions/funds-transactions">click</a> </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
-        <div class="info-box7 bg-c-blue order-info-box7">
-            <div class="info-box7-block">
-                <h2 class="text-end"><span class="float-start">
-                    
-                    {{ withrawalsCount}}
-                </span><i class="fas fa-arrow-circle-up"></i>
-                </h2>
-                <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Withdrawals</p>
-                <div><a routerLink="/transactions/funds-transactions">click</a> </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
-        <div class="info-box7 bg-c-blue order-info-box7">
-            <div class="info-box7-block">
-                <h2 class="text-end"><span class="float-start">
-                    
-                    {{ depositsCount}}
-                </span>
-                    <i class="fas fa-arrow-circle-down"></i>
-                </h2>
-                <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Deposits</p>
-                <div><a routerLink="/transactions/funds-transactions">click</a> </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
-        <div class="info-box7 bg-c-blue order-info-box7">
-            <div class="info-box7-block">
-                <h2 class="text-end"><span class="float-start">
-                    <!-- {{ glsCount }} -->
+            <a routerLink="/tellers">
+                <div class="info-box7 bg-c-blue order-info-box7">
+                    <div class="info-box7-block">
+                        <h2 class="text-end"><span class="float-start">
+                            {{ tellersCount }}
+                        </span><i class="fas fa-user-plus"></i>
+                        </h2>
+                        <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Tellers</p>
                         
-                </span><i class="fas fa-list"></i></h2>
-                <p class="m-b-0" style="font-size: 17px; font-weight: 500;">GLs</p>
-                <div><a routerLink="/transactions/back-office-transactions">click</a> </div>
-
-            </div>
-        </div>
+                    </div>
+                </div>
+            </a> 
     </div>
 
     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
-        <div class="info-box7 bg-c-blue order-info-box7">
-            <div class="info-box7-block">
-                <h2 class="text-end"><span class="float-start">
-                    <!-- {{ transfersCount }} -->
-                    
-                </span><i class="fas fa-server"></i></h2>
-                <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Transfers</p>
-                <div><a routerLink="/transactions/funds-transactions">click</a> </div>
-
+        <a class="info-box-link" routerLink="/transactions/funds-transactions">
+            <div class="info-box7 bg-c-blue order-info-box7">
+                <div class="info-box7-block">
+                    <h2 class="text-end"><span class="float-start">
+                        <!-- {{ customersCount }} -->
+                    </span><i class="fas fa-users"></i>
+                    </h2>
+                    <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Customers</p>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 
     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
-        <div class="info-box7 bg-c-blue order-info-box7">
-            <div class="info-box7-block">
-                <h2 class="text-end"><span class="float-start">
-                    <!-- {{ westernUnionCount }} -->
-                
-                </span>
-                    <i class="fas fa-earth-americas"></i></h2>
-
-                <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Western Union</p>
-                <div><a routerLink="/transactions/funds-transactions">click</a> </div>
-
+        <a routerLink="/transactions/funds-transactions">
+            <div class="info-box7 bg-c-blue order-info-box7">
+                <div class="info-box7-block">
+                    <h2 class="text-end"><span class="float-start">
+                        {{ transactionsCount }}
+                    </span><i class="fa fa-money-check-dollar"></i>
+                    </h2>
+                    <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Transactions</p>
+                </div>
             </div>
-        </div>
+         </a>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
+        <a routerLink="/transactions/funds-transactions"> 
+            <div class="info-box7 bg-c-blue order-info-box7">
+                <div class="info-box7-block">
+                    <h2 class="text-end"><span class="float-start">
+                        {{ withrawalsCount}}
+                    </span><i class="fas fa-arrow-circle-up"></i>
+                    </h2>
+                    <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Withdrawals</p>
+                </div>
+            </div>
+         </a>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
+        <a routerLink="/transactions/funds-transactions">
+            <div class="info-box7 bg-c-blue order-info-box7">
+                <div class="info-box7-block">
+                    <h2 class="text-end"><span class="float-start">
+                        
+                        {{ depositsCount}}
+                    </span>
+                        <i class="fas fa-arrow-circle-down"></i>
+                    </h2>
+                    <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Deposits</p>
+                </div>
+            </div>
+      </a>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
+        <a routerLink="/transactions/back-office-transactions">
+            <div class="info-box7 bg-c-blue order-info-box7">
+                <div class="info-box7-block">
+                    <h2 class="text-end"><span class="float-start">
+                        <!-- {{ glsCount }} -->
+                    </span><i class="fas fa-list"></i></h2>
+                    <p class="m-b-0" style="font-size: 17px; font-weight: 500;">GLs</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
+        <a routerLink="/transactions/funds-transactions">
+            <div class="info-box7 bg-c-blue order-info-box7">
+                <div class="info-box7-block">
+                    <h2 class="text-end"><span class="float-start">
+                        <!-- {{ transfersCount }} -->
+                    </span><i class="fas fa-server"></i></h2>
+                    <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Transfers</p>
+                </div>
+            </div>
+          </a>
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 ">
+        <a routerLink="/transactions/funds-transactions">
+            <div class="info-box7 bg-c-blue order-info-box7">
+                <div class="info-box7-block">
+                    <h2 class="text-end"><span class="float-start">
+                        <!-- {{ westernUnionCount }} -->
+                    </span>
+                        <i class="fas fa-earth-americas"></i></h2>
+                    <p class="m-b-0" style="font-size: 17px; font-weight: 500;">Western Union</p>
+                </div>
+            </div>
+         </a>
     </div>
 </div>
