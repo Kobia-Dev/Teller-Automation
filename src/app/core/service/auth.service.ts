@@ -15,6 +15,8 @@ const httpOptions = {
 export class AuthService {
   constructor(private http: HttpClient) { }
 
+  // serverUrl = "http://localhost:7700"
+
   public login(user: any): Observable<Auth>{
     return this.http.post<Auth>(`${environment.baseUrl}/api/v1/auth/admin/signin`, user, httpOptions);
   }

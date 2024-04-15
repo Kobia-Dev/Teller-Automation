@@ -31,8 +31,8 @@ export class SigninComponent extends UnsubscribeOnDestroyAdapter implements OnIn
     super();
   }
 
-  ngOnInit() {
-    this.authForm = this.formBuilder.group({
+  ngOnInit() { 
+    this.authForm = this.formBuilder.group({ 
       username: ["", Validators.required],
       password: ["", Validators.required],
     });
