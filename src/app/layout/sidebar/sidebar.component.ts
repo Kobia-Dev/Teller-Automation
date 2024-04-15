@@ -1,5 +1,7 @@
 import { Router, NavigationEnd } from "@angular/router";
 import { DOCUMENT } from "@angular/common";
+import { ViewChild, } from '@angular/core';
+
 
 import {
   Component,
@@ -21,29 +23,8 @@ import { BaseComponent } from "src/app/shared/components/base/base.component";
   styleUrls: ["./sidebar.component.sass"],
 })
 
-export class SidebarComponent extends BaseComponent implements OnInit, OnDestroy {z
+export class SidebarComponent extends BaseComponent implements OnInit, OnDestroy {
   public sidebarItems: any[];
-
-  isHidden1=true
-  closeNav1(){
-    this.isHidden1=!this.isHidden1
-  }
-
-  isHidden2: boolean = true;
-  closeNav2() {
-    this.isHidden2 = !this.isHidden2;
-  }
-
-  isHidden3: boolean = true;
-
-  closeNav3() {
-    this.isHidden3 = !this.isHidden3;
-  }
-
-  
-
-
-
   level1Menu = "";
   level2Menu = "";
   level3Menu = "";
@@ -57,8 +38,6 @@ export class SidebarComponent extends BaseComponent implements OnInit, OnDestroy
   headerHeight = 60;
   currentRoute: string;
   routerObj = null;
-
-  isMenuOpen: boolean = false;
 
   currentUser: any;
 
@@ -74,7 +53,7 @@ export class SidebarComponent extends BaseComponent implements OnInit, OnDestroy
     this.routerObj = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
 
-        const role = ["ADMIN", "STAFF", "SERVICE_PROVIDER"];
+        const role = ["ADMIN", "STAFF", "MANUFACTURER", "WAREHOUSE", "SERVICE_PROVIDER"];
 
         const currenturl = event.url.split("?")[0];
         const firstString = currenturl.split("/").slice(1)[0];
@@ -136,7 +115,9 @@ export class SidebarComponent extends BaseComponent implements OnInit, OnDestroy
     const role = this.currentUser.role;
 
     if (this.currentUser) {
-      let userRole = this.currentUser.role;
+      let userRole = this.currentUser.roles[0];
+      console.log("role", userRole)
+
       this.userFullName = this.currentUser.firstName;
       this.userImg = "assets/images/prof.png";
 
@@ -194,5 +175,26 @@ export class SidebarComponent extends BaseComponent implements OnInit, OnDestroy
     this.tokenStorageService.signOut();
     this.router.navigate(["/authentication/signin"]);
     //window.location.reload();
+  }
+  
+  showDropdown = false;
+
+  @ViewChild('dropdownContent', { static: false }) dropdownContent: ElementRef;
+  @ViewChild('dropdownButton', { static: false }) dropdownButton: ElementRef;
+  
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown;
+  
+    if (this.showDropdown) {
+      // Position the dropdown content below the button
+      const buttonRect = this.dropdownButton.nativeElement.getBoundingClientRect();
+      this.dropdownContent.nativeElement.style.top = `${buttonRect.bottom}px`;
+      this.dropdownContent.nativeElement.style.left = `${buttonRect.left}px`;
+    }
+  }
+  
+  // Optional: Programmatic navigation using Router (can be triggered elsewhere)
+  navigateToComponent(componentName: string) {
+    this.router.navigate([`/bonds/${componentName}`]);
   }
 }
