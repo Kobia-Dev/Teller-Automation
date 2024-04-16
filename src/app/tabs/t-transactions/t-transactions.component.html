@@ -1,0 +1,56 @@
+<section class="content">
+    <div class="content-block">
+        <div class="block-header">
+            <div class="row col-sm-12 mt-3">
+                <h4 class="text-center">Transactions</h4>
+            </div>
+            <div class="search">
+                <mat-form-field>
+                    <mat-label>Filter</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" style="width: 74%;" placeholder="filter transaction by Id" #input>
+                </mat-form-field>
+            </div>
+            
+            
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Id</th>
+                            <th>Transaction Id</th>
+                            <th>Amount</th>
+                            <th>Teller Id</th>
+                            <th rowspan="2" class="text-center">Action</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let transaction of getDisplayedTransactions()">
+                            <td>{{ transaction.date }}</td>
+                            <td>{{ transaction.id }}</td>
+                            <td>{{ transaction.transactionId }}</td>
+                            <td>{{ transaction.amount }}</td>
+                            <td>{{ transaction.pfnumber }}</td>
+                            <td class="text-center">
+                                <!-- Action buttons -->
+                                <button class="btn btn-primary" (click)="viewTransaction()">View</button>
+                                <!-- <a routerLink="'/modify'" class="btn btn-primary mx-1" (click)="click()">
+                                    <i class="fa fa-edit"></i> Edit
+                                </a>
+                                <a routerLink="#" class="btn btn-warning mx-1"> -->
+                                    <!-- <i class="fa fa-trash"></i> -->
+                                     <!-- Deactivate
+                                </a> -->
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Pagination -->
+                <mat-paginator [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" [length]="totalItems" (page)="pageChanged($event)">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+</section>

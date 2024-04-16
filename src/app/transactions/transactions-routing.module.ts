@@ -6,16 +6,20 @@ import { MpesaTransactionsComponent } from './mpesa-transactions/mpesa-transacti
 import { FundsTransferComponent } from './funds-transfer/funds-transfer.component';
 import { BackOfficeTransactionsComponent } from './back-office-transactions/back-office-transactions.component';
 import { EndOfDayTransactionsComponent } from './end-of-day-transactions/end-of-day-transactions.component';
+import { TTransactionsComponent } from '../tabs/t-transactions/t-transactions.component';
 
 
 const routes: Routes = [
-  {path:'', component: TellersTransactionsComponent},
+  {path:'', component: TTransactionsComponent},
   {path:'tellers-transactions', component: TellersTransactionsComponent},
   {path:'atms-transactions', component: AtmsTransactionsComponent},
   {path:'mpesa-transactions', component: MpesaTransactionsComponent},
   {path:'funds-transactions', component: FundsTransferComponent},
   {path:'back-office-transactions', component: BackOfficeTransactionsComponent},
   {path:'end-of-day-transactions', component: EndOfDayTransactionsComponent},
+  {path:'t-transactions', component: TTransactionsComponent},
+
+
  
 ];
 

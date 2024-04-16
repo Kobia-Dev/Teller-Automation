@@ -32,6 +32,7 @@ import {
 import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginator, MatPaginatorModule } from "@angular/material/paginator";
+import { TTransactionsComponent } from './tabs/t-transactions/t-transactions.component';
 
 
 
@@ -53,6 +54,7 @@ export function createTranslateLoader(http: HttpClient): any {
     RightSidebarComponent,
     AuthLayoutComponent,
     MainLayoutComponent,
+    TTransactionsComponent,
     
    
     // SwiftComponent,
