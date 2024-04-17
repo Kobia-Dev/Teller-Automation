@@ -62,8 +62,8 @@ export class SigninComponent
   }
 
 
-  ngOnInit() {
-    this.authForm = this.formBuilder.group({
+  ngOnInit() { 
+    this.authForm = this.formBuilder.group({ 
       username: ["", Validators.required],
       password: ["", Validators.required],
     });

@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartTitleOptions } from 'chart.js';
 import { Series } from 'd3-shape';
+
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { TransactionService } from '../../services/transaction.service';
 
 @Component({
@@ -16,14 +20,25 @@ export class ActorsComponent implements OnInit {
   withdrawals: any[] = [];
   withdrawalsCount: number = 0;
 
+  dataSource: MatTableDataSource<any>;
+  displayedColumns: string[] = ['no', 'fullName', 'email', 'phoneNuo', 'status', 'actions'];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+
+  isLoading = true;
+  
+
+
   constructor(
-    private tellersService: TransactionService,
-    private withdrawalService: TransactionService  ) { }
+    private tellerService: TransactionService,
+    private withdrawalService: TransactionService
+  ) { }
 
   ngOnInit(): void {
   }
   private getAllTellers() {
-    this.tellersService.getAllTellers().subscribe({
+    this.tellerService.getAllTellers().subscribe({
       next: ((response) => {
         this.tellers = response.entity;
         this.tellersCount = this.tellers.length;

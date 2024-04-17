@@ -1,6 +1,4 @@
-<section class="content">
-    <div class="content-block">
-        <div class="block-header">
+
             <div class="row col-sm-12 mt-3">
                 <h4 class="text-center">Transactions</h4>
             </div>
@@ -12,7 +10,7 @@
             </div>
             
             
-            <div class="card-body table-responsive">
+            <div class="card-body table-responsive" >
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -31,10 +29,10 @@
                             <td>{{ transaction.id }}</td>
                             <td>{{ transaction.transactionId }}</td>
                             <td>{{ transaction.amount }}</td>
-                            <td>{{ transaction.pfnumber }}</td>
+                            <td>{{ transaction.teller_id }}</td>
                             <td class="text-center">
                                 <!-- Action buttons -->
-                                <button class="btn btn-primary" (click)="viewTransaction()">View</button>
+                                <!-- <button class="btn btn-primary" (click)="viewTransaction()">View</button> -->
                                 <!-- <a routerLink="'/modify'" class="btn btn-primary mx-1" (click)="click()">
                                     <i class="fa fa-edit"></i> Edit
                                 </a>
@@ -50,7 +48,5 @@
                 <!-- Pagination -->
                 <mat-paginator [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" [length]="totalItems" (page)="pageChanged($event)">
                 </mat-paginator>
-            </div>
-        </div>
+            
     </div>
-</section>

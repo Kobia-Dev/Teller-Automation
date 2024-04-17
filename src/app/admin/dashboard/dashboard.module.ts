@@ -17,6 +17,10 @@ import { GenWidgetsComponent } from './gen-widgets/gen-widgets.component';
 import { ActorsComponent } from './actors/actors.component';
 import { ActorPerRegionComponent } from './actor-per-region/actor-per-region.component';
 import { MixedTransactionsBarComponent } from './mixed-transactions-bar/mixed-transactions-bar.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableExporterModule } from 'mat-table-exporter';
+
+
 
 @NgModule({
   declarations: [ 
@@ -35,6 +39,9 @@ import { MixedTransactionsBarComponent } from './mixed-transactions-bar/mixed-tr
     ReactiveFormsModule,
     FormsModule,
     MatSelectModule,
+    MatTabsModule,
+    MatTableExporterModule
+    
   ]
 })
 export class DashboardModule { }
