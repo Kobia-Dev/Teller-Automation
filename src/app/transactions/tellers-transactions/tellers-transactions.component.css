@@ -3,6 +3,12 @@ body {font-family: Arial;}
 .tab {
   overflow: auto; 
 }
+.custom-dialog-container {
+  overflow-y: auto; /* Adds vertical scroll if content exceeds the height */
+  padding: 0px; /* Adds padding to the dialog content */
+  margin: 10pxs; /* Removes default margin */
+  box-sizing: border-box; /* Ensures padding and border are included in the total width and height */
+}
 
 .tab button {
   background-color: #b1a7a7;

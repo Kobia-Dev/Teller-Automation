@@ -3,6 +3,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { TransactionService } from 'src/app/admin/services/transaction.service';
 
+
 @Component({
   selector: 'app-t-transactions',
   templateUrl: './t-transactions.component.html',
