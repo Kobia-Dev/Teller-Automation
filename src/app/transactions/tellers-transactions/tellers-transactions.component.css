@@ -3,12 +3,23 @@ body {font-family: Arial;}
 .tab {
   overflow: auto; 
 }
-.custom-dialog-container {
-  overflow-y: auto; /* Adds vertical scroll if content exceeds the height */
-  padding: 0px; /* Adds padding to the dialog content */
-  margin: 10pxs; /* Removes default margin */
-  box-sizing: border-box; /* Ensures padding and border are included in the total width and height */
+/* .custom-dialog-container{
+text-align: left;
+align-items: end;
+} */
+.details{
+  width:80%;
+  letter-spacing:3em;
 }
+
+.details-container {
+  display: flex horizontally;
+  justify-content: space-evenly;
+}
+a{
+  margin-left: 2%;
+}
+
 
 .tab button {
   background-color: #b1a7a7;
@@ -30,4 +41,16 @@ body {font-family: Arial;}
 
 .tab button.active {
   background-color: #ccc; 
+}
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
 }

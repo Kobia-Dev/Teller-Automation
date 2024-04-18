@@ -10,7 +10,7 @@ import { TTransactionsComponent } from '../tabs/t-transactions/t-transactions.co
 
 
 const routes: Routes = [
-  {path:'', component: TTransactionsComponent},
+  {path:'', component: FundsTransferComponent},
   {path:'tellers-transactions', component: TellersTransactionsComponent},
   {path:'atms-transactions', component: AtmsTransactionsComponent},
   {path:'mpesa-transactions', component: MpesaTransactionsComponent},

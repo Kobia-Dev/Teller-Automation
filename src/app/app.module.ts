@@ -33,6 +33,8 @@ import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginator, MatPaginatorModule } from "@angular/material/paginator";
 import { TTransactionsComponent } from './tabs/t-transactions/t-transactions.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -83,7 +85,9 @@ export function createTranslateLoader(http: HttpClient): any {
     // core & shared
     CoreModule,
     SharedModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule,
+    MatInputModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

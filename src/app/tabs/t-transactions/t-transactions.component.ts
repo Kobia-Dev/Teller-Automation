@@ -1,8 +1,18 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { TransactionService } from 'src/app/admin/services/transaction.service';
 
+export interface TransactionData {
+  id: string;
+  date: string;
+  amount: string;
+  teller_id: string;
+  transactionId: string;
+}
 
 @Component({
   selector: 'app-t-transactions',
@@ -11,45 +21,48 @@ import { TransactionService } from 'src/app/admin/services/transaction.service';
 })
 export class TTransactionsComponent implements OnInit {
   
-applyFilter($event: any) {
-throw new Error('Method not implemented.');
-}
+  displayedColumns: string[] = ['id', 'amount', 'teller_id', 'transactionId', 'date', 'time'];
+  dataSource: MatTableDataSource<TransactionData>;
+transactions: any;
+pageSizeOptions: number[] = [5, 10, 25];
+pageSize: number = 5; // Number of tellers per page
+pageIndex: number = 0;
+totalItems: number = 0;
 
-  transactions: any[];
-  pageSizeOptions: number[] = [5, 10, 25];
-  pageSize: number = 5; // Number of tellers per page
-  pageIndex: number = 0;
-  totalItems: number = 0;
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+@ViewChild(MatPaginator) paginator: MatPaginator;
+@ViewChild(MatSort) sort: MatSort;
 
   constructor(
-    private transactionService: TransactionService,
-    private router: Router
+    @Inject(MAT_DIALOG_DATA) private data,
+    private matref:MatDialogRef<TTransactionsComponent>,
+   
   ) {}
 
   ngOnInit(): void {
-    this.getAllTransactions();
+    this.transactions = this.data.data  
+    this.dataSource = new MatTableDataSource(this.transactions);
+   
+    console.log("hello", this.transactions);
+     
   }
-  
-  public getAllTransactions(): void { 
-    this.transactionService.getAllTransactions().subscribe({
-      next: (response) => {
-        if (response.statusCode === 200) {
-          this.transactions = response.entity;
-          this.totalItems = this.transactions.length;
-          // Reset pageIndex to 0 to start from the first page
-          this.pageIndex = 0;
-        } else {
-          // Handle other status codes if needed
-        }
-      },
-      error: (error) => {
-        console.error('Error', error);
-      },
-      complete: () => { }
-    });
+  ngAfterViewInit(): void{
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
+
+  applyFilter(event: Event) {
+    
+    const filterValue = (event.target as HTMLInputElement).value;
+    console.log(filterValue);
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+
+
 
   pageChanged(event: PageEvent): void {
     this.pageIndex = event.pageIndex;
@@ -58,9 +71,9 @@ throw new Error('Method not implemented.');
 
   
 
-  click() {
-    this.router.navigate(['/back-office/modify-transaction']);
-  } 
+  // click() {
+  //   this.router.navigate(['/back-office/modify-transaction']);
+  // } 
 
   getDisplayedTransactions(): any[] {
     const startIndex = this.pageIndex * this.pageSize;
