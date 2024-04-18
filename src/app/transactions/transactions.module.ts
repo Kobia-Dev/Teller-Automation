@@ -9,6 +9,11 @@ import { FundsTransferComponent } from './funds-transfer/funds-transfer.componen
 import { BackOfficeTransactionsComponent } from './back-office-transactions/back-office-transactions.component';
 import { EndOfDayTransactionsComponent } from './end-of-day-transactions/end-of-day-transactions.component';
 import { RtgsComponent } from '../tabs/rtgs/rtgs.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -24,7 +29,13 @@ import { RtgsComponent } from '../tabs/rtgs/rtgs.component';
   ],
   imports: [
     CommonModule,
-    TransactionsRoutingModule
+    TransactionsRoutingModule,
+    MatFormFieldModule, 
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatPaginatorModule,
+    MatTableModule
   ]
 })
 export class TransactionsModule { }
