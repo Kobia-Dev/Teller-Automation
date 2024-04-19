@@ -20,6 +20,11 @@ export class AuthService {
   public login(user: any): Observable<Auth>{
     return this.http.post<Auth>(`${environment.baseUrl}/api/v1/auth/admin/signin`, user, httpOptions);
   }
+  
+
+  // public login(user: any): Observable<Auth>{
+  //   return this.http.post<Auth>(`${environment.baseUrl}/api/v1/auth/userSignIn`, user, httpOptions);
+  // }
 
   public register(user: any): Observable<{ message: string }> {
     const registerUrl = `${environment.baseUrl}/api/v1/auth/signup`;

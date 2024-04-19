@@ -144,7 +144,8 @@ export class SigninComponent
         })
 
         if(role == Role.Admin){
-          this.router.navigate(['/admin/dashboard']);  
+          // this.router.navigate(['/admin/dashboard']);  
+          this.router.navigate(['/authentication/otp'])
         console.log("routed")
         }
         
