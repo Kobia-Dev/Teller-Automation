@@ -42,9 +42,10 @@ totalItems: number = 0;
     this.transactions = this.data.data  
     this.dataSource = new MatTableDataSource(this.transactions);
    
-    console.log("hello", this.transactions);
+    // console.log("hello", this.transactions);
      
   }
+  
   ngAfterViewInit(): void{
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -79,5 +80,8 @@ totalItems: number = 0;
     const startIndex = this.pageIndex * this.pageSize;
     const endIndex = startIndex + this.pageSize;
     return this.transactions.slice(startIndex, endIndex);
+  }
+  dialogClose(){
+    this.matref.close()
   }
 }
