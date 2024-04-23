@@ -8,7 +8,7 @@ import { Page404Component } from "./page404/page404.component";
 import { Page500Component } from "./page500/page500.component";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
 import { ChangePasswordComponent } from "./change-password/change-password.component";
-import { OtpComponent } from "./otp/otp.component";
+import { OtpComponent } from "./otp/otp.component"; 
 
 
 
