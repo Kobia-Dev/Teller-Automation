@@ -21,6 +21,10 @@ export interface TransactionData {
   styleUrls: ['./tellers-transactions.component.css']
 })
 export class TellersTransactionsComponent implements OnInit {
+closeDialog() {
+throw new Error('Method not implemented.');
+}
+
   displayedColumns: string[] = ['id', 'amount', 'teller_id', 'transactionId', 'date', 'time'];
   dataSource: MatTableDataSource<TransactionData>;
 transactions: any;
@@ -32,11 +36,14 @@ totalItems: number = 0;
 @ViewChild(MatPaginator) paginator: MatPaginator;
 @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private dialog : MatDialog, 
+  constructor(
+    // public dialogRef:MatDialogRef<TTransactionsComponent>,
+    private dialog : MatDialog, 
     private router: Router,
     private http: TransactionService){}
 
   viewTransactions(){
+    // this.dialogRef.close()
     const dialogRef:MatDialogRef<TTransactionsComponent> = this.dialog.open(TTransactionsComponent,{
       width: '90%', 
       height: '80%', 
@@ -47,18 +54,15 @@ totalItems: number = 0;
       data:{
         data:this.transactions
       },
-    
       
- 
      })
-     dialogRef.afterClosed().subscribe(
-       ((res) =>{
-         this.ngOnInit()
+    //  dialogRef.afterClosed().subscribe(
+    //    ((res) =>{
+    //      this.ngOnInit()
  
-       }))
+    //    }))
    }
  
-
   ngOnInit(): void {
     this.getAllTransactions()
   }
@@ -129,6 +133,8 @@ totalItems: number = 0;
   //     }
   //   });
   // }
-  
+  // closeDialog(){
+  //   this.dialogRef.close()
+  // }
 }
 
