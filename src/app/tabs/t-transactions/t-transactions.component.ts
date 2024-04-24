@@ -45,6 +45,14 @@ totalItems: number = 0;
     // console.log("hello", this.transactions);
      
   }
+  print(item:string) {
+    let printContents = document.getElementById(item).innerHTML;
+    let originalContents = document.body.innerHTML;
+    
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+  }
   
   ngAfterViewInit(): void{
     this.dataSource.paginator = this.paginator;
