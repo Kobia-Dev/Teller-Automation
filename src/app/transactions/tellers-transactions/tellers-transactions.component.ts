@@ -21,12 +21,10 @@ export interface TransactionData {
   styleUrls: ['./tellers-transactions.component.css']
 })
 export class TellersTransactionsComponent implements OnInit {
-closeDialog() {
-throw new Error('Method not implemented.');
-}
 
   displayedColumns: string[] = ['id', 'amount', 'teller_id', 'transactionId', 'date', 'time'];
   dataSource: MatTableDataSource<TransactionData>;
+  
 transactions: any;
 pageSizeOptions: number[] = [5, 10, 25];
 pageSize: number = 5; // Number of tellers per page
