@@ -32,9 +32,9 @@ import {MatTableModule} from '@angular/material/table';
     FormsModule,
     ReactiveFormsModule,
     MatTableModule   
-  //   MatIconModule,
-  //   MatDialog,
-  //   MatDialogConfig
+    // MatIconModule,
+    // MatDialog,
+    // MatDialogConfig
   ]
 })
 export class TellersModule { }
