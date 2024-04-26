@@ -1,7 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { SnackbarService } from 'src/app/admin/services/snackbar.service';
@@ -29,6 +29,7 @@ export class OtpComponent implements OnInit {
     private formBuilder: FormBuilder,
     private tokenService: TokenStorageServiceService,
     private router: Router,
+    private snack:MatSnackBar,
     private authService: AuthService,
 
     private snackbar: SnackbarService
@@ -97,26 +98,28 @@ export class OtpComponent implements OnInit {
 
       //this.tokenService.clearSharedTokenOrCookie();
 
+      const otpData = {
+        "otp": otpValue,
+        "username": this.currentUser
+      }
+      this.authService
+        .verifyOtp(otpData).subscribe(
+          ((res)=>{
+            console.log("sam", res);
+            
+          }),
+          ((error) =>{
+            this.snack.open(error.error.message, "Close",{duration:3600})
+            this.loading = false;
+            
+          }),
+          ()=>{
+            this.router.navigateByUrl("/admin/dashboard");
 
-      // this.authService
-      //   .verifyOTP(params)
-      //   .pipe(takeUntil(this.destroy$))
-      //   .subscribe({
-      //     next: (res) => {
-      //       console.log("res: ", res);
+          }
+        )     
+        
 
-      //       if (res.statusCode == 200) {
-      //         this.tokenCookieService.saveUser(res.entity);
-      //         console.log("res.entity: ", res.entity)
-      //         this.tokenCookieService.setSharedRefreshTokenToCookie(res.entity.refreshToken);
-      //         console.log("set refreshToken: ", res.entity.refreshToken)
-
-      //         this.snackbar.showNotification(
-      //           "snackbar-success",
-      //           "Login Successful"
-      //         );
-
-              this.router.navigateByUrl("/admin/dashboard");
               // this.router.navigateByUrl("/checker/dashboard/analytics");
 
             // } else {
@@ -169,3 +172,4 @@ export class OtpComponent implements OnInit {
   }
 
 }
+ 

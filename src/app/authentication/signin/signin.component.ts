@@ -130,10 +130,11 @@ export class SigninComponent
     this.authService.login(this.authForm.value).subscribe(
       (res: any)=>{
 
-        this.tokenStorage.saveToken(res.token)
-        this.tokenStorage.saveUser(res);
-
-        const role = res.roles[0];
+        this.tokenStorage.saveToken(res.entity.token)
+        this.tokenStorage.saveUser(res.entity);
+        console.log(res.entity);
+        
+        const role = res.entity.roles[0];
         console.log(role)
 
         this.snack.open("sucessfully logged in","X",{
