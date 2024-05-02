@@ -68,6 +68,7 @@ export class OtpComponent implements OnInit {
 
   loading: boolean = false;
   error: any;
+  
   onSubmit() {
     this.loading = true;
     this.error = "";
@@ -105,7 +106,6 @@ export class OtpComponent implements OnInit {
       this.authService
         .verifyOtp(otpData).subscribe(
           ((res)=>{
-            console.log("sam", res);
             
           }),
           ((error) =>{

@@ -21,7 +21,7 @@ export class AuthService {
   //   return this.http.post<Auth>(`${environment.baseUrl}/api/v1/auth/admin/signin`, user, httpOptions);
   // }
 
-  //http://192.168.91.154:7700/api/v1/auth/verifyOTP
+  //http://192.168.88.169:7700/api/v1/auth/verifyOTP
   verifyOtp(user:any):Observable<any>{
   const url = `${environment.baseUrl}/api/v1/auth/verifyOTP`;
   return this.http.post<{ message: string }>(url, user)

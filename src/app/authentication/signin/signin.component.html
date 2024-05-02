@@ -34,19 +34,18 @@
                             </mat-form-field>
                         </div>
 
+                        <div *ngIf="loading" class="loading-spinner"></div> <!-- Loading spinner -->
+
                         <div *ngIf="error" class="alert alert-danger col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">{{error}}</div>
 
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
-                            <button class="btn" mat-raised-button [class.auth-spinner]="loading" [disabled]="loading" [disabled]="!authForm.valid" type="submit">Login</button>
+                            <button class="btn" mat-raised-button [class.auth-spinner]="loading" [disabled]="loading || !authForm.valid" type="submit">Login</button>
                         </div>
 
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2 text">
-                               
-                                  <a routerLink="/authentication/forgot-password">Forgot password?</a>
-                               
+                                <a routerLink="/authentication/forgot-password">Forgot password?</a>
                             </div>
-                            
                         </div>
 
                     </form>
