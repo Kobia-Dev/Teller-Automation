@@ -24,3 +24,14 @@ table {
   td, th {
     width: 25%;
   }
+.dialog-close {
+  position: relative;
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    align-items: center; /* Aligns items vertically center */
+    margin-top: 20px; /* Adjust as needed */
+}
+
+#printButton {
+    margin-left: 10px; /* Adds some space between the buttons */
+}

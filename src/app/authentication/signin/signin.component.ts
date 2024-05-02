@@ -39,8 +39,10 @@ export class SigninComponent
   implements OnInit {
   authForm: FormGroup;
   submitted = false;
-  loading = false;
-  error = "";
+  loading: boolean = false;
+  error: string | null = null;
+  // loading = false;
+  // error = "";
   hide = true;
 
 
@@ -74,52 +76,8 @@ export class SigninComponent
     this.destroy$.complete();
   }
 
-  // onSubmit() {
-  //   this.submitted = true;
-  //   this.loading = true;
-  //   this.error = "";
-  //   if (this.authForm.invalid) {
-  //     this.error = "Input Username and Password !";
-  //     return;
-  //   } else {
-  //     console.log(this.authForm.value);
-  //     this.authService.login(this.authForm.value).pipe(takeUntil(this.destroy$)).subscribe({
-  //       next: ((res) => {
-
-  //         if (res.statusCode === 200) {
-
-  //           this.submitted = false;
-  //           this.loading = false;
-  //           this.tokenStorage.saveToken(res.entity.access_token);
-  //           this.tokenStorage.saveUser(res.entity);
-  //           const role = res.entity.role
-  //           if (role == Role.Admin) {
-  //             console.log("Role:", role);
-  //             this.router.navigate(['/admin/dashboard']);
-  //           } else {
-  //             console.log("Access denied");
-  //           }
-  //         } else {
-  //           this.error = res.message;
-  //           this.submitted = false;
-  //           this.loading = false;
-  //           console.log("Message", res.message);
-  //         }
-  //       }),
-  //       error: ((error) => {
-  //         this.error = error;
-  //         console.log(error);
-  //         this.submitted = false;
-  //         this.loading = false;
-  //       }),
-  //       complete: (() => { })
-
-  //     })
-  //   }
-  // }
-
   onSubmit(){
-    
+    this.loading = true;
     this.error= "";
     
     if(this.authForm.invalid){
@@ -130,10 +88,11 @@ export class SigninComponent
     this.authService.login(this.authForm.value).subscribe(
       (res: any)=>{
 
-        this.tokenStorage.saveToken(res.token)
-        this.tokenStorage.saveUser(res);
-
-        const role = res.roles[0];
+        this.tokenStorage.saveToken(res.entity.token)
+        this.tokenStorage.saveUser(res.entity);
+        console.log(res.entity);
+        
+        const role = res.entity.roles[0];
         console.log(role)
 
         this.snack.open("sucessfully logged in","X",{
@@ -161,6 +120,7 @@ export class SigninComponent
         })
         console.log(error)
       }
+      
     )
   }
 
