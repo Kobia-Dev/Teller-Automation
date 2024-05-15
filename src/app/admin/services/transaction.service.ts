@@ -40,6 +40,12 @@ export class TransactionService {
   public getAllDeposits(): Observable<any>{
     return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/Transaction/getDeposits`);
   }
+
+  ///api/v1/gl/getAll
+  getAllGls(): Observable<any>{
+    const url = `${environment.baseUrl}/api/v1/gl/getAll`
+    return this.httpClient.get<any>(url);
+  }
   
   
 }

@@ -12,8 +12,8 @@ export interface TransactionData {
   id: string;
   date: string;
   amount: string;
-  teller_id: string;
   transactionId: string;
+  transactionType:string;
 }
 @Component({
   selector: 'app-tellers-transactions',
@@ -22,7 +22,7 @@ export interface TransactionData {
 })
 export class TellersTransactionsComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'amount', 'teller_id', 'transactionId', 'date', 'time'];
+  displayedColumns: string[] = ['id', 'amount', 'transactionId', 'date', 'time','transactionType'];
   dataSource: MatTableDataSource<TransactionData>;
   
 transactions: any;

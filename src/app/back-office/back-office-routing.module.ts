@@ -2,13 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ReferralsComponent } from './referrals/referrals.component';
 import { AddTellerComponent } from './add-teller/add-teller.component';
-import { ModifyTellerComponent } from './modify-teller/modify-teller.component';
+import { ReplenishComponent } from './replenish/replenish.component';
+import {MatInputModule} from '@angular/material/input';
+import { ViewGlsComponent } from '../tabs/view-gls/view-gls.component';
 
 const routes: Routes = [
   {path:'', component: ReferralsComponent},
   {path:'referrals', component: ReferralsComponent},
   {path:'add-teller', component: AddTellerComponent},
-  {path:'modify-teller', component: ModifyTellerComponent}
+  {path:'replenish', component: ReplenishComponent},
+  {path:'view-gls', component: ViewGlsComponent}
+
 ];
 
 @NgModule({
