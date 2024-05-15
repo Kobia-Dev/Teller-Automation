@@ -72,71 +72,46 @@ export class OtpComponent implements OnInit {
   onSubmit() {
     this.loading = true;
     this.error = "";
+  
     if (this.otpForm.invalid) {
       this.error = "Invalid OTP!";
       return;
-    } else {
-      const otpValue = Number(
-        this.otpForm.controls.first.value +
-        this.otpForm.controls.second.value +
-        this.otpForm.controls.third.value +
-        this.otpForm.controls.fourth.value
-      );
-
-
-      const params = new HttpParams()
-        // .set("format", type)
-        .set("username", this.currentUser)
-        .set("otpCode", otpValue);
-
-
-      //this.tokenCookieService.saveUser(userJSON);
-
-      //this.router.navigate(["/admin/dashboard"]);
-
-
-      //this.tokenService.clearSharedTokenOrCookie();
-
-      const otpData = {
-        "otp": otpValue,
-        "username": this.currentUser
-      }
-      this.authService
-        .verifyOtp(otpData).subscribe(
-          ((res)=>{
-            
-          }),
-          ((error) =>{
-            this.snack.open(error.error.message, "Close",{duration:3600})
-            this.loading = false;
-            
-          }),
-          ()=>{
-            this.router.navigateByUrl("/admin/dashboard");
-
-          }
-        )     
-        
-
-              // this.router.navigateByUrl("/checker/dashboard/analytics");
-
-            // } else {
-            //   this.snackbar.showNotification("snackbar-danger", res.message);
-            // }
-
-        //     this.loading = false;
-        //   },
-        //   error: (err) => {
-        //     this.snackbar.showNotification(
-        //       "snackbar-danger",
-        //       "Server Error: !!"
-        //     );
-        //     this.loading = false;
-        //   },
-        //   complete: () => { },
-        // }),
-        // Subscription;
     }
+  
+    const otpValue = Number(
+      this.otpForm.controls.first.value +
+      this.otpForm.controls.second.value +
+      this.otpForm.controls.third.value +
+      this.otpForm.controls.fourth.value
+    );
+  
+    const otpData = {
+      "otp": otpValue,
+      "username": this.currentUser
+    };
+  
+    this.authService.verifyOTP(otpData).subscribe(
+      (res) => {
+        // Assuming the server returns a specific message for invalid OTP
+        if (res) {
+          // Assuming the server returns a specific message for successful OTP verification
+          this.snack.open("Login successful", "Close", { duration: 3600, panelClass: ['snackbar-success'], horizontalPosition: 'center', verticalPosition: 'top' });
+          this.router.navigateByUrl("/admin/dashboard");
+        } else {
+          this.snack.open("Invalid OTP", "Close", { duration: 3600, panelClass: ['snackbar-danger'], horizontalPosition: 'center', verticalPosition: 'top' });
+
+        }
+        this.loading = false;
+      },
+      (error) => {
+        console.error(error);
+        // Handle specific error scenarios if needed
+        this.snack.open("OTP is invalid", "Close", { duration: 3600, panelClass: ['snackbar-danger'], horizontalPosition: 'center',
+          verticalPosition: 'top'
+         });
+        this.loading = false;
+      }
+    );
   }
 
 
