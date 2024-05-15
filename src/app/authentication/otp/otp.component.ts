@@ -83,14 +83,12 @@ export class OtpComponent implements OnInit {
         this.otpForm.controls.fourth.value
       );
 
-      console.log(otpValue);
 
       const params = new HttpParams()
         // .set("format", type)
         .set("username", this.currentUser)
         .set("otpCode", otpValue);
 
-      console.log("params: ", params);
 
       //this.tokenCookieService.saveUser(userJSON);
 

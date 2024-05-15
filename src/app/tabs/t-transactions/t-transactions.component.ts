@@ -10,8 +10,8 @@ export interface TransactionData {
   id: string;
   date: string;
   amount: string;
-  teller_id: string;
   transactionId: string;
+  transactionType:string;
 }
 
 @Component({
@@ -21,7 +21,7 @@ export interface TransactionData {
 })
 export class TTransactionsComponent implements OnInit {
   
-  displayedColumns: string[] = ['id', 'amount', 'teller_id', 'transactionId', 'date', 'time'];
+  displayedColumns: string[] = ['id', 'amount', 'transactionId', 'date', 'time','transactionType'];
   dataSource: MatTableDataSource<TransactionData>;
 transactions: any;
 pageSizeOptions: number[] = [5, 10, 25];

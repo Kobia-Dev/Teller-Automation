@@ -35,6 +35,7 @@ import { MatPaginator, MatPaginatorModule } from "@angular/material/paginator";
 import { TTransactionsComponent } from './tabs/t-transactions/t-transactions.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
+import { ReplenishTellerComponent } from './tabs/replenish-teller/replenish-teller.component';
 
 
 
@@ -57,6 +58,7 @@ export function createTranslateLoader(http: HttpClient): any {
     AuthLayoutComponent,
     MainLayoutComponent,
     TTransactionsComponent,
+    ReplenishTellerComponent,
     
    
     // SwiftComponent,
@@ -68,6 +70,7 @@ export function createTranslateLoader(http: HttpClient): any {
   imports: [
     NgApexchartsModule,
     BrowserModule,
+    
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,

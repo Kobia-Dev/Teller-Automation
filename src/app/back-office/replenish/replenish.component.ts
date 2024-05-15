@@ -14,15 +14,17 @@ export interface TellerData {
   email: string;
   national_id: string;
   pfnumber: string;
+  action: string;
 }
 
 @Component({
-  selector: 'app-teller',
-  templateUrl: './teller.component.html',
-  styleUrls: ['./teller.component.css']
+  selector: 'app-replenish',
+  templateUrl: './replenish.component.html',
+  styleUrls: ['./replenish.component.css']
 })
-export class TellerComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'email', 'national_id', 'pfnumber'];
+export class ReplenishComponent implements OnInit {
+
+  displayedColumns: string[] = ['id', 'name', 'email', 'national_id', 'pfnumber', 'action'];
   dataSource: MatTableDataSource<TellerData>;
 
   tellers: any[];
@@ -107,9 +109,7 @@ export class TellerComponent implements OnInit {
     this.pageSize = event.pageSize;
   }
 
-  // click() {
-  //   this.router.navigate(['/back-office/modify-teller']);
-  // } 
+ 
 
   getDisplayedTellers(): any[] {
     const startIndex = this.pageIndex * this.pageSize;
@@ -119,55 +119,17 @@ export class TellerComponent implements OnInit {
   public refresh(){
     this.getAllTellers();
   }
-  // public applyFilter(event: any) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
+  // onViewClick(data:any) {
+  //   this.dialog.open(ViewCriticalRoleComponent, {
+  //     width:"80%",
+  //     height:"65%",
+  //     position:{
+  //       right:"20px"
+  //     },
+  //     data:{
+  //       criticalRole:data
+  //     }
+
+  //   })
   //   }
-  // }
-  public viewRecord(row : any) {
-    const dialogConfig = new MatDialogConfig()
-    dialogConfig.disableClose = true
-    dialogConfig.autoFocus = true
-    dialogConfig.width = '600px'
-    dialogConfig.data = { rowData: row}
-
-    const dialogRef = this.dialog.open(TellerComponent, dialogConfig)
-
-    dialogRef.afterClosed().subscribe( (result) => {
-      console.log('closed')
-    });
-  }
-  public deleteRecord(row : any) {
-    const dialogConfig = new MatDialogConfig()
-    dialogConfig.disableClose = true
-    dialogConfig.autoFocus = true
-    dialogConfig.width = '600px'
-    dialogConfig.data = { rowData: row}
-
-    const dialogRef = this.dialog.open(TellerComponent, dialogConfig)
-
-    dialogRef.afterClosed().subscribe( (result) => {
-      console.log('closed')
-    });
-  }
-
-  public deactivateRecord(row : any) {
-    const dialogConfig = new MatDialogConfig()
-    dialogConfig.disableClose = true
-    dialogConfig.autoFocus = true
-    dialogConfig.width = '6009x'
-    dialogConfig.data = { rowData : row}
-
-    const dialogRef = this.dialog.open(TellerComponent, dialogConfig)
-
-    dialogRef.afterClosed().subscribe( (result) => {
-      console.log('close')
-      if (result === 'deactivateConfirmed') {
-        console.log('Deactivating record: ', row);
-        this.getAllTellers();
-      }
-    })
-  }
 }
