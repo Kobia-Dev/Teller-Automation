@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { TransactionService } from 'src/app/admin/services/transaction.service';
@@ -26,20 +27,15 @@ export class ViewGlsComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) private data,
     private matref:MatDialogRef<ViewGlsComponent>,
-   private glsService:TransactionService
+   private glsService:TransactionService,
+   private snackBar: MatSnackBar
    ) {}
 
     
   ngOnInit(): void {
     this.gls = this.data.data  
-    this.dataSource = new MatTableDataSource(this.gls);
-   
-    console.log("hello", this.gls);
+    this.getAllGls()
      
-  }
-
-  ngAfterViewInit(): void{
-    this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {
@@ -51,18 +47,16 @@ export class ViewGlsComponent implements OnInit {
   getAllGls(): void { 
     this.glsService.getAllGls().subscribe({
       next: (response) => {
-        
-        if (response.statusCode === 200) {
+        console.log("1234", response);
          
           this.gls = response.entity;
           this.totalItems = this.gls.length;
-          this.dataSource = new MatTableDataSource(this.gls);
+          this.dataSource = new MatTableDataSource(response.entity);
           this.dataSource.sort = this.sort;
-        } else {
-          // Handle other status codes if needed
-        }
+       
       },
       error: (error) => {
+        this.snackBar.open(error.error.message, "Close", {duration: 3600, verticalPosition:'top'})
         console.error('Error', error);
       },
       complete: () => { }
