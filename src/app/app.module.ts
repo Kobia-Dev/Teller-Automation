@@ -36,6 +36,7 @@ import { TTransactionsComponent } from './tabs/t-transactions/t-transactions.com
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import { ReplenishTellerComponent } from './tabs/replenish-teller/replenish-teller.component';
+import { ViewGlsComponent } from './tabs/view-gls/view-gls.component';
 
 
 
@@ -59,6 +60,7 @@ export function createTranslateLoader(http: HttpClient): any {
     MainLayoutComponent,
     TTransactionsComponent,
     ReplenishTellerComponent,
+    ViewGlsComponent,
     
    
     // SwiftComponent,

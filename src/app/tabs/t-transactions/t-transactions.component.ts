@@ -42,7 +42,7 @@ totalItems: number = 0;
     this.transactions = this.data.data  
     this.dataSource = new MatTableDataSource(this.transactions);
    
-    // console.log("hello", this.transactions);
+    console.log("hello", this.transactions);
      
   }
   print(item:string) {
