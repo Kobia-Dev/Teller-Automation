@@ -14,6 +14,7 @@ import {MatTableModule} from '@angular/material/table';
 
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
+import { TrsansactionPerTellerComponent } from './trsansaction-per-teller/trsansaction-per-teller.component';
 
 
 
@@ -24,7 +25,8 @@ import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
-    TellerComponent
+    TellerComponent,
+    TrsansactionPerTellerComponent
   ],
   imports: [
     CommonModule,

@@ -47,6 +47,10 @@ export class TransactionService {
     return this.httpClient.get<any>(url);
   }
   
-  
+  //create function to get transactions per tellers pfNumber
+  getTellerTransaction(pfNumber: number): Observable<any> {
+    // Make sure to include pfNumber in the API call
+    return this.httpClient.get<any>(`${environment.baseUrl}/api/v1/Transaction/getTransactionByPf?pfNumber=${pfNumber}`);
+  }
   
 }

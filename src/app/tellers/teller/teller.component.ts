@@ -8,6 +8,8 @@ import { DataService } from 'src/app/admin/services/data.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 
+import { TrsansactionPerTellerComponent } from '../trsansaction-per-teller/trsansaction-per-teller.component';
+
 export interface TellerData {
   id: string;
   name: string;
@@ -167,7 +169,20 @@ export class TellerComponent implements OnInit {
   }
 
   //function to view teller's transaction
-  handleViewAction(pf: number){
+  handleViewAction(pfNumber: number){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      pfNumber: pfNumber // Pass only the pfNumber property
+    };
+  
+    dialogConfig.width = "77%";
+    dialogConfig.position = {
+      right: "36px"
+    };
     
+    const dialogRef = this.dialog.open(TrsansactionPerTellerComponent, dialogConfig);
+    this.router.events.subscribe(() => {
+      dialogRef.close();
+    });
   }
 }
