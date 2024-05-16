@@ -119,17 +119,6 @@ export class ReplenishComponent implements OnInit {
   public refresh(){
     this.getAllTellers();
   }
-  // onViewClick(data:any) {
-  //   this.dialog.open(ViewCriticalRoleComponent, {
-  //     width:"80%",
-  //     height:"65%",
-  //     position:{
-  //       right:"20px"
-  //     },
-  //     data:{
-  //       criticalRole:data
-  //     }
-
-  //   })
-  //   }
+  handleRejectAction(){}
+  
 }

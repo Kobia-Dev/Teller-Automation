@@ -21,6 +21,9 @@ export class GenWidgetsComponent implements OnInit {
   deposits: any[] = [];
   depositsCount: number = 0;
 
+  gls: any[] = [];
+  glsCount: number = 0;
+
   constructor(
     private tellerservice: TransactionService,
     private withdrawalService: TransactionService,
@@ -31,6 +34,7 @@ export class GenWidgetsComponent implements OnInit {
   ngOnInit(): void {
     this.getTellers();
     this.getAllTransactions();
+    this.getAllGls();
   }
   private getTellers() {
     this.tellerservice.getAllTellers().subscribe({
@@ -74,6 +78,19 @@ export class GenWidgetsComponent implements OnInit {
       next: ((response) => {
         this.deposits = response.entity;
         this.depositsCount = this.deposits.length;
+      }),
+      error: ((error) => {
+        console.log("Error fetching transactions", error);
+      }),
+      complete: (() => { })
+    })
+  }
+
+  private getAllGls() {
+    this.depositsService.getAllGls().subscribe({
+      next: ((response) => {
+        this.gls = response.entity;
+        this.glsCount = this.gls.length;
       }),
       error: ((error) => {
         console.log("Error fetching transactions", error);

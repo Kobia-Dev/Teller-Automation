@@ -12,6 +12,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 
 
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatButtonModule} from '@angular/material/button';
+import { TrsansactionPerTellerComponent } from './trsansaction-per-teller/trsansaction-per-teller.component';
+
+
+
 
 
 
@@ -19,7 +25,8 @@ import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
-    TellerComponent
+    TellerComponent,
+    TrsansactionPerTellerComponent
   ],
   imports: [
     CommonModule,
@@ -31,10 +38,10 @@ import {MatTableModule} from '@angular/material/table';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableModule   
-    // MatIconModule,
-    // MatDialog,
-    // MatDialogConfig
+    MatTableModule,
+    MatTooltipModule,
+    MatButtonModule
+
   ]
 })
 export class TellersModule { }
