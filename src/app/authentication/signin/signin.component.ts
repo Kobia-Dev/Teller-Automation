@@ -99,7 +99,7 @@ export class SigninComponent
           duration: 5000,
           horizontalPosition:'end',
           verticalPosition:'top',
-          panelClass:'notif-success'
+          panelClass:'snackbar-success'
         })
 
         if(role == Role.Admin){
