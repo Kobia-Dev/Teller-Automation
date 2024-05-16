@@ -12,6 +12,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 
 
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatButtonModule} from '@angular/material/button';
+
+
+
 
 
 
@@ -31,10 +36,10 @@ import {MatTableModule} from '@angular/material/table';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableModule   
-    // MatIconModule,
-    // MatDialog,
-    // MatDialogConfig
+    MatTableModule,
+    MatTooltipModule,
+    MatButtonModule
+
   ]
 })
 export class TellersModule { }

@@ -14,6 +14,8 @@ import { ModifyTellerComponent } from './modify-teller/modify-teller.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReplenishComponent } from './replenish/replenish.component';
 
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 @NgModule({
   declarations: [
     ReferralsComponent,
@@ -30,7 +32,8 @@ import { ReplenishComponent } from './replenish/replenish.component';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatTooltipModule
   ]
 })
 export class BackOfficeModule { }

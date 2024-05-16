@@ -14,6 +14,7 @@ export interface TellerData {
   email: string;
   national_id: string;
   pfnumber: string;
+  action: string;
 }
 
 @Component({
@@ -22,7 +23,7 @@ export interface TellerData {
   styleUrls: ['./teller.component.css']
 })
 export class TellerComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'email', 'national_id', 'pfnumber'];
+  displayedColumns: string[] = ['id', 'name', 'email', 'national_id', 'pfnumber', 'action'];
   dataSource: MatTableDataSource<TellerData>;
 
   tellers: any[];
@@ -119,13 +120,7 @@ export class TellerComponent implements OnInit {
   public refresh(){
     this.getAllTellers();
   }
-  // public applyFilter(event: any) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
+  
   public viewRecord(row : any) {
     const dialogConfig = new MatDialogConfig()
     dialogConfig.disableClose = true
@@ -169,5 +164,10 @@ export class TellerComponent implements OnInit {
         this.getAllTellers();
       }
     })
+  }
+
+  //function to view teller's transaction
+  handleViewAction(pf: number){
+    
   }
 }
