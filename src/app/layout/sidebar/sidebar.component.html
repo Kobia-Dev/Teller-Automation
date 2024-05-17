@@ -8,7 +8,7 @@
                 <li [class.active]="level1Menu === sidebarItem.moduleName && sidebarItem.submenu.length != 0" *ngFor="let sidebarItem of sidebarItems" [routerLinkActive]="sidebarItem.submenu.length != 0 ? '' : 'active'">
                     <div class="header" *ngIf="sidebarItem.groupTitle === true">{{sidebarItem.title | translate}}</div>
                     <a [routerLink]="sidebarItem.class === '' ? [sidebarItem.path] : null" *ngIf="!sidebarItem.groupTitle;" [ngClass]="[sidebarItem.class]" (click)="callLevel1Toggle($event, sidebarItem.moduleName)" class="menu-top">
-                        <i-feather [name]="sidebarItem.icon" class="sidebarIcon l-bg-brown"></i-feather>
+                        <i-feather [name]="sidebarItem.icon" class="sidebarIcon l-bg-maroon"></i-feather>
                         <span class="hide-menu">{{sidebarItem.title | translate}}
             </span>
                         <span *ngIf="sidebarItem.badge != '' " [ngClass]="[sidebarItem.badgeClass]">{{sidebarItem.badge}}</span>
