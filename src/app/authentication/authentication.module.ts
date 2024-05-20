@@ -9,7 +9,7 @@ import { SignupComponent } from "./signup/signup.component";
 import { LockedComponent } from "./locked/locked.component";
 import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
 import { ReactiveFormsModule } from "@angular/forms";
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatFormField, MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
@@ -24,6 +24,11 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatDialogModule } from "@angular/material/dialog";
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { OtpComponent } from './otp/otp.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -50,7 +55,8 @@ import { OtpComponent } from './otp/otp.component';
     MatSelectModule,
     MatDatepickerModule,
     MatAutocompleteModule,
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule
 
     
   ],
