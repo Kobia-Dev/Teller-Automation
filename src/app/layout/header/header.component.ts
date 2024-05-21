@@ -7,7 +7,9 @@ import {
   Renderer2,
   AfterViewInit,
 } from "@angular/core";
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { Router } from "@angular/router";
+import { ChangePasswordComponent } from "src/app/authentication/change-password/change-password.component";
 import { ConfigService } from "src/app/config/config.service";
 import { AuthService } from "src/app/core/service/auth.service";
 import { LanguageService } from "src/app/core/service/language.service";
@@ -46,7 +48,8 @@ navigateToChangePassword: any;
     private configService: ConfigService,
     private router: Router,
     public languageService: LanguageService,
-    private tokenStorage: TokenStorageService
+    private tokenStorage: TokenStorageService,
+    private dialog: MatDialog
   ) {
     super();
   }
@@ -244,5 +247,19 @@ navigateToChangePassword: any;
       this.tokenStorage.signOut();
       this.router.navigate(["/authentication/signin"]);
     }
+
+    handleChangePasswordAction() {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.width = "50%";
+      // dialogConfig.position = {
+      //   right: "36px"
+      // };
+      const dialogRef = this.dialog.open(ChangePasswordComponent, dialogConfig);
+      this.router.events.subscribe(() => {
+        dialogRef.close();
+      });
+    }
     
   }
+  
+  

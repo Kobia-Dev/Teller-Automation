@@ -15,6 +15,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import { TrsansactionPerTellerComponent } from './trsansaction-per-teller/trsansaction-per-teller.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 
@@ -40,7 +43,9 @@ import { TrsansactionPerTellerComponent } from './trsansaction-per-teller/trsans
     ReactiveFormsModule,
     MatTableModule,
     MatTooltipModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatCardModule
 
   ]
 })

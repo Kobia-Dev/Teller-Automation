@@ -1,6 +1,18 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { TransactionService } from 'src/app/admin/services/transaction.service';
+
+
+
+export interface TellerData {
+  transactionId: string;
+  amount: number;
+  date: string;
+  transactionType: string;
+  completed: boolean;
+}
 
 @Component({
   selector: 'app-trsansaction-per-teller',
@@ -8,10 +20,11 @@ import { TransactionService } from 'src/app/admin/services/transaction.service';
   styleUrls: ['./trsansaction-per-teller.component.css']
 })
 export class TrsansactionPerTellerComponent implements OnInit {
-
+  
   displayedColumns: string[] = ['transactionId', 'amount', 'date', 'transactionType', 'completed'];
-  dataSource: any;
-  data: any;
+  dataSource: MatTableDataSource<TellerData> = new MatTableDataSource();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public dialogData: any,
@@ -20,17 +33,18 @@ export class TrsansactionPerTellerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.data = this.dialogData.data;
-    console.log(this.data);
-    this.getTellerTransaction(this.dialogData.pfNumber); // Pass only the pfNumber property
+    this.getTellerTransaction(this.dialogData.pfNumber);
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
   }
   
-  getTellerTransaction(pfNumber: number): void { // Adjust the method signature to accept pfNumber
+  getTellerTransaction(pfNumber: number): void {
     this.transactionService.getTellerTransaction(pfNumber).subscribe((response: any) => {
-      console.log(response);
-      // Handle the response as needed
+      if (response && response.entity) {
+        this.dataSource.data = response.entity;
+      }
     });
   }
-  
-
 }
