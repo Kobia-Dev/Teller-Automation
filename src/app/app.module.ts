@@ -37,6 +37,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import { ReplenishTellerComponent } from './tabs/replenish-teller/replenish-teller.component';
 import { ViewGlsComponent } from './tabs/view-gls/view-gls.component';
+import { ApproveReferralsComponent } from './tabs/approve-referrals/approve-referrals.component';
+import { AllReferralsComponent } from './tabs/all-referrals/all-referrals.component';
 
 
 
@@ -61,6 +63,8 @@ export function createTranslateLoader(http: HttpClient): any {
     TTransactionsComponent,
     ReplenishTellerComponent,
     ViewGlsComponent,
+    ApproveReferralsComponent,
+    AllReferralsComponent,
     
    
     // SwiftComponent,
