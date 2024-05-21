@@ -4,9 +4,8 @@
             <div class="col-sm-12">
                 <div class="tab d-flex" style="width: 100%;">
             <button class="tablinks h5" (click)="viewGls(data)">View GLs</button>
-            <button class="tablinks h5" routerLink="/transactions/funds-transactions">Funds Transfer</button>
-            <button class="tablinks h5"  routerLink="/back-office/replenish">Replesnish Teller</button>
-            <button class="tablinks h5" routerLink="/transactions/atms-transactions">Replenish ATMs</button>
+            <button class="tablinks h5"  (click)="allReferrals(data)">Referrals</button>
+            <button class="tablinks h5" (click)="approveReferrals(data)">Approve Referrals</button>
           
           </div>
              
