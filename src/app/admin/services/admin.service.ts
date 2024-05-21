@@ -8,6 +8,8 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class AdminService {
 
+  url = environment.baseUrl;
+
   constructor(
     private httpClient: HttpClient) { }
 
@@ -27,9 +29,15 @@ export class AdminService {
   }
 
   //http://192.168.89.54:7700/api/v1/auth/reset-password
-   changePassword(request: any): Observable<any> {
-    const url = `${environment.baseUrl}/api/v1/auth/reset-password`
-    return this.httpClient.post<any>(url, request);
+  //  changePassword(request: any): Observable<any> {
+  //   const url = `${environment.baseUrl}/api/v1/auth/reset-password`
+  //   return this.httpClient.post<any>(url, request);
+  // }
+
+  changePassword(data: any){
+    return this.httpClient.post(this.url + "/api/v1/auth/reset-password", data, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+    })
   }
 
   forgotPassword(request: any): Observable<any> {
