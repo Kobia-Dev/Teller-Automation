@@ -5,3 +5,7 @@ mat-card{
 table{
     width: 100%;
 }
+
+mat-toolbar{
+    background: #a42c2c;
+}

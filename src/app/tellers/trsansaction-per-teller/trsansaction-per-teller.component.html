@@ -1,7 +1,13 @@
 <div class="text-center">
-   <div class="row">
-    <h3 class="col-sm-8">View Transactions</h3>
-   </div>
+  <mat-toolbar>
+    <mat-toolbar-row class="row">
+        <span class="col-sm-10 text-start">View Transactions</span>
+        <!-- <span class="spacer"></span> -->
+        <button class="mat-dialog-close col-sm-2" mat-icon-button mat-dialog-close>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
     <mat-card>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="transactionId">
@@ -32,6 +38,9 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
     </mat-card>
   </div>
   

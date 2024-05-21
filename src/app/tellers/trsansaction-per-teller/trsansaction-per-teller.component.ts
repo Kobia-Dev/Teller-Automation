@@ -1,7 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { TransactionService } from 'src/app/admin/services/transaction.service';
+
+
 
 export interface TellerData {
   transactionId: string;
@@ -20,6 +23,8 @@ export class TrsansactionPerTellerComponent implements OnInit {
   
   displayedColumns: string[] = ['transactionId', 'amount', 'date', 'transactionType', 'completed'];
   dataSource: MatTableDataSource<TellerData> = new MatTableDataSource();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public dialogData: any,
@@ -29,6 +34,10 @@ export class TrsansactionPerTellerComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTellerTransaction(this.dialogData.pfNumber);
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
   }
   
   getTellerTransaction(pfNumber: number): void {
