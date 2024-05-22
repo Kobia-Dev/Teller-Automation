@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TokenStorageService } from 'src/app/core/service/token-storage.service';
@@ -52,9 +52,10 @@ export class TransactionService {
   return this.httpClient.get<any>(url);
 }
 ///api/v1/referral/approve
-  public approveReferrals(referralId:any): Observable<any> {
-    return this.httpClient.post<any>(`${environment.baseUrl}/api/v1/referral/approve`, referralId);
-  }
+public approveReferrals(referralId: string): Observable<any> {
+  const params = new HttpParams().set('refId', referralId);
+  return this.httpClient.post<any>(`${environment.baseUrl}/api/v1/referral/approveByRefId`, {}, { params });
+}
   
 
   //create function to get transactions per tellers pfNumber
