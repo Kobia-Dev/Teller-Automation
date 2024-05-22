@@ -20,33 +20,33 @@ data: any;
   ){}
   ngOnInit(): void {
   }
-  viewGls(data:any) {
-    this.dialog.open(ViewGlsComponent, {
-      width:"80%",
-      height:"65%",
-      position:{
-        right:"20px"
-      },
-      data:{
-        criticalRole:data
-      }
+  // viewGls(data:any) {
+  //   this.dialog.open(ViewGlsComponent, {
+  //     width:"80%",
+  //     height:"65%",
+  //     position:{
+  //       right:"20px"
+  //     },
+  //     data:{
+  //       criticalRole:data
+  //     }
 
-    })
-    }
+  //   })
+  //   }
 
-    allReferrals(data:any) {
-      this.dialog.open(AllReferralsComponent, {
-        width:"80%",
-        height:"65%",
-        position:{
-          right:"20px"
-        },
-        data:{
-          criticalRole:data
-        }
+    // allReferrals(data:any) {
+    //   this.dialog.open(AllReferralsComponent, {
+    //     width:"80%",
+    //     height:"65%",
+    //     position:{
+    //       right:"20px"
+    //     },
+    //     data:{
+    //       criticalRole:data
+    //     }
   
-      })
-      }
+    //   })
+    //   }
 
     approveReferrals(data:any) {
       this.dialog.open(ViewGlsComponent, {
