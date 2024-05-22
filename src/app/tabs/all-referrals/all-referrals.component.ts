@@ -71,4 +71,45 @@ export class AllReferralsComponent implements OnInit {
     this.matref.close()
   }
 
+  handleApproveAction(referralId: string){
+    
+    console.log(referralId)
+    this.glsService.approveReferrals(referralId).subscribe((response: any) => {
+      console.log(response)
+      if (response.entity && response.entity.id != null) {
+        this.snackBar.open(response.message, "Close", {
+          duration: 5000,
+          horizontalPosition: 'end',
+          verticalPosition: 'top',
+          panelClass: 'snackbar-success'
+        })
+      }else if(response.entity == null && response.message) {
+        this.snackBar.open(response.message, "Close", {
+          duration: 5000,
+          horizontalPosition: 'end',
+          verticalPosition: 'top',
+          panelClass: 'snackbar-warning'
+        })
+      }else {
+        this.snackBar.open("The system is busy, kindly try again after two minutes.", "Close", {
+          duration: 5000,
+          horizontalPosition: 'end',
+          verticalPosition: 'top',
+          panelClass: 'snackbar-danger'
+        });
+      }
+    }, (error) => {
+      console.log(error);
+      this.snackBar.open("The system is busy, try again after two minutes", "Close", {
+        duration: 5000,
+        horizontalPosition: 'end',
+        verticalPosition: 'top',
+        panelClass: 'snackbar-danger'
+      });
+    });
+  }
+
+  handleRejectAction(){
+
+  }
 }
