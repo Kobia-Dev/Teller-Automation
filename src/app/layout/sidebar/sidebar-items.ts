@@ -226,6 +226,7 @@ export const ROUTES: RouteInfo[] = [
         role: ["ADMIN"],
         submenu: [],
       },
+    
       {
         path: "./back-office/view-gls",
         title: "View GLs",
@@ -240,7 +241,20 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
     ],
+    
   },
-  
+  {
+    path: "./customer-details",
+    title: "Customer Search",
+    moduleName: "customer-details",
+    iconType: "feather",
+    icon: "user",
+    class: "",
+    groupTitle: false,
+    badge: "",
+    badgeClass: "",
+    role: ["ADMIN"],
+    submenu: [],
+  },
 ]
  

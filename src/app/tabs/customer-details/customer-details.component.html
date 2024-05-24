@@ -1,0 +1,91 @@
+<section class="content">
+    <div class="content-block">
+        <div class="breadcrumb">
+            <ul>
+                <li>Customers</li>
+            </ul>
+        </div>
+        <div class="container">
+            <em>Search Customer By Account No</em>
+            <form #customerSearchForm="ngForm" (ngSubmit)="search(customerSearchForm)">
+                <div class="form-group">
+                    <label>Search CUstomer</label>
+                    <div class="input-container">
+                        <input type="text" class="form-control" name="acc" [(ngModel)]="customerSearchForm.acc" required
+                          placeholder="enter account number" (input)="showClearIcon = customerSearchForm.acc.length > 0">
+                        <span class="clear-icon" *ngIf="showClearIcon" (click)="clearInput()">&times;</span>
+                      </div>
+                </div>
+                <div class="submitting">
+                    <button class="btn btn-primary d-flex justify-content-center align-items-center "  *ngIf="isSearching">
+                        <span class="text-white mx-1 ">Searching..</span>
+                    <div class="spinner-border text-light" role="status">
+                        
+                      </div>
+                     </button> 
+                    <button *ngIf="!isSearching" type="submit" class="btn btn-primary" [disabled]="customerSearchForm.invalid">Search</button>
+
+                </div>
+            </form>
+
+            <div class="customer-info"  *ngIf="customerData">
+                <div class="row mt-3">
+                    <div class="col-sm-6">
+                    
+                      <div class="card">
+                        <h5 class="text-center">Basic Info</h5>
+                        <div class="card-body">
+                        <div class="name d-flex align-items-center">
+                            <h6>Customer Name:</h6>
+                            <span class="mx-3">{{customerData.firstName}} {{customerData.lastName}}</span>
+                        </div>
+                        <div class="name d-flex align-items-center">
+                            <h6>Account Number:</h6>
+                            <span class="mx-3">{{customerData.customerAccount[0].accno}}</span>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <h5 class="text-center">Contact Info</h5>
+                          <div class="card-body">
+                          <div class="name d-flex align-items-center">
+                              <h6>Email Adress:</h6>
+                              <span class="mx-3">{{customerData.email}}</span>
+                          </div>
+                          <div class="name d-flex align-items-center">
+                              <h6>Phone Number:</h6>
+                              <span class="mx-3">{{customerData.phoneNumber}}</span>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div> 
+                  <div class="table">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>Account Number</th>
+                            <th>Balance</th>
+                            <th>Customer ID</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of customerData.customerAccount">
+                                <td>{{item.accno}}</td>
+                                <td>{{item.balance}}</td>
+                                <td>{{item.customer_id}} </td>
+                                <td>
+                                    <button class="btn btn-primary" >
+                                        View Transactions
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
