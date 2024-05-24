@@ -3,7 +3,6 @@ import { Form } from '@angular/forms';
 import { TransactionService } from 'src/app/admin/services/transaction.service';
 
 
-
 @Component({
   selector: 'app-customer-details',
   templateUrl: './customer-details.component.html',
@@ -11,6 +10,7 @@ import { TransactionService } from 'src/app/admin/services/transaction.service';
 })
 export class CustomerDetailsComponent implements OnInit {
   customerSearchForm = { acc: '' };
+   panelOpenState = false;
   showClearIcon = false;
   isSearching: boolean = false;
   customerData:any;

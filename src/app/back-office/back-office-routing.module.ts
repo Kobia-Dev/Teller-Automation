@@ -9,7 +9,7 @@ import { AllReferralsComponent } from '../tabs/all-referrals/all-referrals.compo
 import { CustomerDetailsComponent } from '../tabs/customer-details/customer-details.component';
 
 const routes: Routes = [
-  {path:'', component: ReferralsComponent},
+  {path:'', component: AllReferralsComponent},
   {path:'referrals', component: ReferralsComponent},
   {path:'add-teller', component: AddTellerComponent},
   {path:'replenish', component: ReplenishComponent},
