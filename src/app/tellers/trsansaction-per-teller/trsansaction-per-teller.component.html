@@ -9,7 +9,7 @@
     </mat-toolbar-row>
   </mat-toolbar>
     <mat-card>
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-bordered">
         <ng-container matColumnDef="transactionId">
           <th mat-header-cell *matHeaderCellDef> Transaction ID </th>
           <td mat-cell *matCellDef="let element"> {{element.transactionId}} </td>

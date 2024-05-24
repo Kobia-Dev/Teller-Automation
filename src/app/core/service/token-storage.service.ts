@@ -11,6 +11,9 @@ export class TokenStorageService {
 
   signOut(): void {
     window.localStorage.clear();
+    localStorage.clear(); // Clear all localStorage data
+    sessionStorage.clear(); // Clear all sessionStorage data
+    
   }
 
   public saveToken(token: string): void {

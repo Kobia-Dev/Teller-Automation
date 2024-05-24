@@ -13,6 +13,7 @@ export interface AllGlData {
   sourceAcc: number;
   destAcc: number;
   action:string;
+  completed: string;
 }
 
 @Component({
@@ -22,7 +23,7 @@ export interface AllGlData {
 })
 export class AllReferralsComponent implements OnInit {
   [x: string]: any;
-  displayedColumns: string[] = ['id', 'referralId', 'referralType', 'amount', 'sourceAcc', 'destAcc','action'];
+  displayedColumns: string[] = ['id', 'referralId', 'referralType', 'amount', 'sourceAcc', 'destAcc', 'completed','action'];
   dataSource: MatTableDataSource<AllGlData>;
   gls: any;
 

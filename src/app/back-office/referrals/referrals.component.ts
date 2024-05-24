@@ -22,8 +22,7 @@ data: any;
   }
   viewGls(data:any) {
     this.dialog.open(ViewGlsComponent, {
-      width:"80%",
-      height:"65%",
+      width:"78%",
       position:{
         right:"20px"
       },
@@ -36,8 +35,7 @@ data: any;
 
     allReferrals(data:any) {
       this.dialog.open(AllReferralsComponent, {
-        width:"80%",
-        height:"65%",
+        width:"78%",
         position:{
           right:"20px"
         },
@@ -50,8 +48,7 @@ data: any;
 
     approveReferrals(data:any) {
       this.dialog.open(ViewGlsComponent, {
-        width:"80%",
-        height:"65%",
+        width:"78%",
         position:{
           right:"20px"
         },

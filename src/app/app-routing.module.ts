@@ -42,11 +42,7 @@ const routes: Routes = [
           import("./back-office/back-office.module").then((m) => m.BackOfficeModule),
       },
       
-      
-      
-      
    
-      
     ],
   },
   {
