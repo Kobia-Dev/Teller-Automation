@@ -40,6 +40,7 @@ import { ViewGlsComponent } from './tabs/view-gls/view-gls.component';
 import { ApproveReferralsComponent } from './tabs/approve-referrals/approve-referrals.component';
 import { AllReferralsComponent } from './tabs/all-referrals/all-referrals.component';
 import { CustomerDetailsComponent } from './tabs/customer-details/customer-details.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -78,7 +79,7 @@ export function createTranslateLoader(http: HttpClient): any {
   imports: [
     NgApexchartsModule,
     BrowserModule,
-    
+    MatExpansionModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
