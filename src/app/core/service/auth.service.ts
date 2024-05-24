@@ -15,13 +15,13 @@ const httpOptions = {
 export class AuthService {
   constructor(private http: HttpClient) { }
 
-  // serverUrl = "http://192.168.88.61:7700"
+  // serverUrl = "http://192.168.88.148:7700"
 
   // public login(user: any): Observable<Auth>{
   //   return this.http.post<Auth>(`${environment.baseUrl}/api/v1/auth/admin/signin`, user, httpOptions);
   // }
 
-  //http://192.168.88.61:7700/api/v1/auth/verifyOTP
+  //http://192.168.88.148:7700/api/v1/auth/verifyOTP
   verifyOTP(user:any):Observable<any>{
   const url = `${environment.baseUrl}/api/v1/auth/verifyOTP`; 
   return this.http.post<{ message: string }>(url, user)

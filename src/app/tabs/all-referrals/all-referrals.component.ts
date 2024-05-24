@@ -30,8 +30,8 @@ export class AllReferralsComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) private data,
-    private matref:MatDialogRef<AllReferralsComponent>,
+    // @Inject(MAT_DIALOG_DATA) private data,
+    // private matref:MatDialogRef<AllReferralsComponent>,
    private glsService:TransactionService,
    private snackBar: MatSnackBar
    ) {}

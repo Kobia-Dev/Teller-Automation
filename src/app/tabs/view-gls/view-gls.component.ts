@@ -25,8 +25,8 @@ export class ViewGlsComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) private data,
-    private matref:MatDialogRef<ViewGlsComponent>,
+    // @Inject(MAT_DIALOG_DATA) private data,
+    // private matref:MatDialogRef<ViewGlsComponent>,
    private glsService:TransactionService,
    private snackBar: MatSnackBar
    ) {}
@@ -63,8 +63,8 @@ export class ViewGlsComponent implements OnInit {
     });
   }
 
-  dialogClose(){
-    this.matref.close()
-  }
+  // dialogClose(){
+  //   this.matref.close()
+  // }
 
 }

@@ -201,8 +201,8 @@ export const ROUTES: RouteInfo[] = [
     role: ["ADMIN"],
     submenu: [
       {
-        path: "./back-office/referrals",
-        title: "Referrals",
+        path: "./back-office/all-referrals",
+        title: "All Referrals",
         moduleName: "back-office",
         iconType: "feather",
         icon: "database",
@@ -226,21 +226,35 @@ export const ROUTES: RouteInfo[] = [
         role: ["ADMIN"],
         submenu: [],
       },
-      // {
-      //   path: "./back-office/add-teller",
-      //   title: "Add Teller",
-      //   moduleName: "back-office",
-      //   iconType: "feather",
-      //   icon: "database",
-      //   class: "",
-      //   groupTitle: false,
-      //   badge: "",
-      //   badgeClass: "",
-      //   role: ["ADMIN"],
-      //   submenu: [],
-      // },
+    
+      {
+        path: "./back-office/view-gls",
+        title: "View GLs",
+        moduleName: "back-office",
+        iconType: "feather",
+        icon: "database",
+        class: "",
+        groupTitle: false,
+        badge: "",
+        badgeClass: "",
+        role: ["ADMIN"],
+        submenu: [],
+      },
     ],
+    
   },
-  
+  {
+    path: "./customer-details",
+    title: "Customer Search",
+    moduleName: "customer-details",
+    iconType: "feather",
+    icon: "user",
+    class: "",
+    groupTitle: false,
+    badge: "",
+    badgeClass: "",
+    role: ["ADMIN"],
+    submenu: [],
+  },
 ]
  

@@ -5,6 +5,7 @@ import { Role } from "./core/models/role";
 import { AuthLayoutComponent } from "./layout/app-layout/auth-layout/auth-layout.component";
 import { MainLayoutComponent } from "./layout/app-layout/main-layout/main-layout.component";
 import { Page404Component } from "./authentication/page404/page404.component";
+import { CustomerDetailsComponent } from "./tabs/customer-details/customer-details.component";
 const routes: Routes = [
   {
     path: "",
@@ -42,7 +43,11 @@ const routes: Routes = [
           import("./back-office/back-office.module").then((m) => m.BackOfficeModule),
       },
       
+      
+      
+      
    
+      
     ],
   },
   {

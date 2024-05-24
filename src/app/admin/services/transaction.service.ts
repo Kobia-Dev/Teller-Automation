@@ -56,7 +56,11 @@ public approveReferrals(referralId: string): Observable<any> {
   const params = new HttpParams().set('refId', referralId);
   return this.httpClient.post<any>(`${environment.baseUrl}/api/v1/referral/approveByRefId`, {}, { params });
 }
-  
+// http://192.168.88.148:7700/api/v1/account/findByAccno?accno=123456789
+customerByAcc(acc:number): Observable<any>{
+  const url = `${environment.baseUrl}/api/v1/account/findByAccno?accno=${acc}`
+  return this.httpClient.get<any>(url);
+}
 
   //create function to get transactions per tellers pfNumber
   getTellerTransaction(pfNumber: number): Observable<any> {
