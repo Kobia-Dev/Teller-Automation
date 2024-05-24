@@ -48,7 +48,7 @@ export class TransactionService {
   }
  //  /api/v1/referral/getAllReferrals
  getAllReferrals(): Observable<any>{
-  const url = `${environment.baseUrl}/api/v1/referral/getAllReferrals`
+  const url = `${environment.baseUrl}/api/v1/referral/getUnapprovedReferrals`
   return this.httpClient.get<any>(url);
 }
 ///api/v1/referral/approve
