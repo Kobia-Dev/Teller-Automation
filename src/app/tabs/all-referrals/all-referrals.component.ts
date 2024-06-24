@@ -38,7 +38,7 @@ export class AllReferralsComponent implements OnInit {
 
     
   ngOnInit(): void {
-    this.gls = this.data.data  
+    // this.gls = this.data.data  
     this.getAllReferrals()
      
   }
@@ -78,6 +78,7 @@ export class AllReferralsComponent implements OnInit {
     this.glsService.approveReferrals(referralId).subscribe((response: any) => {
       console.log(response)
       if (response.entity && response.entity.id != null) {
+        this.getAllReferrals();
         this.snackBar.open(response.message, "Close", {
           duration: 5000,
           horizontalPosition: 'end',

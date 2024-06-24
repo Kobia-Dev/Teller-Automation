@@ -10,6 +10,7 @@ import { SwiftComponent } from '../tabs/swift/swift.component';
 import { InternalTransferComponent } from '../tabs/internal-transfer/internal-transfer.component';
 import { WesternUnionComponent } from '../tabs/western-union/western-union.component';
 import { MoneyGramComponent } from '../tabs/money-gram/money-gram.component';
+import { TellerReportComponent } from './teller-report/teller-report.component';
 
 const routes: Routes = [
   {path: '', component: FundsTransferReportComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'swift', component: SwiftComponent},
   {path: 'internal-transfer', component: InternalTransferComponent},
   {path: 'money-gram', component: MoneyGramComponent},
-  {path: 'western-union', component: WesternUnionComponent}
+  {path: 'western-union', component: WesternUnionComponent},
+  { path : 'teller-report', component : TellerReportComponent }
 
 ];
 

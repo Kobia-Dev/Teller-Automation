@@ -33,7 +33,7 @@ export class ViewGlsComponent implements OnInit {
 
     
   ngOnInit(): void {
-    this.gls = this.data.data  
+    // this.gls = this.data.data  
     this.getAllGls()
      
   }

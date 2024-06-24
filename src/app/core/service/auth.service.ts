@@ -27,9 +27,9 @@ export class AuthService {
   return this.http.post<{ message: string }>(url, user)
 }
 
-  public login(user: any): Observable<Auth>{
-    return this.http.post<Auth>(`${environment.baseUrl}/api/v1/auth/userSignIn`, user, httpOptions);
-  }
+public login(user: any): Observable<Auth>{
+  return this.http.post<Auth>(`${environment.baseUrl}/api/v1/auth/userSignIn`, user, httpOptions);
+}
 
   public register(user: any): Observable<{ message: string }> {
     const registerUrl = `${environment.baseUrl}/api/v1/auth/signup`;
