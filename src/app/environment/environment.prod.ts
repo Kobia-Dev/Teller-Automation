@@ -1,8 +1,8 @@
 export const environment = {
     production: true,
 <<<<<<< HEAD
-    baseUrl: "http://192.168.88.148:7700",
-    API: "http://192.168.88.148:7700"
+    baseUrl: "http://192.168.88.224:7700",
+    API: "http://192.168.88.224:7700"
 =======
     baseUrl: "http://192.168.91.68:7700",
     API: "http://192.168.91.68:7700"

@@ -12,6 +12,8 @@ import { SwiftComponent } from '../tabs/swift/swift.component';
 import { InternalTransferComponent } from '../tabs/internal-transfer/internal-transfer.component';
 import { WesternUnionComponent } from '../tabs/western-union/western-union.component';
 import { MoneyGramComponent } from '../tabs/money-gram/money-gram.component';
+import { TellerReportsComponent } from './teller-reports/teller-reports.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({ 
@@ -25,12 +27,14 @@ import { MoneyGramComponent } from '../tabs/money-gram/money-gram.component';
     SwiftComponent,
     InternalTransferComponent,
     WesternUnionComponent,
-    MoneyGramComponent
+    MoneyGramComponent,
+    TellerReportsComponent
     
   ],
   imports: [
     CommonModule,
-    ReportsRoutingModule
+    ReportsRoutingModule,
+    MatCardModule
   ]
 })
 export class ReportsModule { }
