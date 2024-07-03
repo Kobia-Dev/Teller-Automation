@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ForexComponent } from './forex.component';
+import { DepositReportComponent } from './deposit-report.component';
 
-describe('ForexComponent', () => {
-  let component: ForexComponent;
-  let fixture: ComponentFixture<ForexComponent>;
+describe('DepositReportComponent', () => {
+  let component: DepositReportComponent;
+  let fixture: ComponentFixture<DepositReportComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ForexComponent ]
+      declarations: [ DepositReportComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ForexComponent);
+    fixture = TestBed.createComponent(DepositReportComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MpesaReportsComponent } from './mpesa-reports.component';
+import { WithdrawalReportComponent } from './withdrawal-report.component';
 
-describe('MpesaReportsComponent', () => {
-  let component: MpesaReportsComponent;
-  let fixture: ComponentFixture<MpesaReportsComponent>;
+describe('WithdrawalReportComponent', () => {
+  let component: WithdrawalReportComponent;
+  let fixture: ComponentFixture<WithdrawalReportComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MpesaReportsComponent ]
+      declarations: [ WithdrawalReportComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MpesaReportsComponent);
+    fixture = TestBed.createComponent(WithdrawalReportComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
